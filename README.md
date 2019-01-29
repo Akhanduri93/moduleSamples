@@ -1,13 +1,12 @@
-# Liqui.do Client Portal
 
 ### Introduction
 
-This repository maintains the Liqui.do Portal code.
+This is an Angular 6 project created using the Angular CLI.
 
-This is an Angular 6 project created using the Angular CLI and hosted in Heroku.
+This is not the runnable code, only code module samples with unit testing and typescript files.
 
-## How to contribute to the project?
-Checkout our [WIKI](https://github.com/candorRentingSA/portal/wiki) to start contributing to the project.
+In case of any issue, revert on same.
+
+Main files - Webpack , typescript files , router files and module files.
 
 
-Check the [Release Notes](docs/RELEASE-NOTES.md).
