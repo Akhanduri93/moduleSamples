@@ -1,0 +1,66 @@
+.mat-radio-button {
+    color: #03363e;
+    white-space: inherit;
+}
+
+mat-divider {
+    margin-bottom: 1rem;
+}
+
+mat-expansion-panel-header:not([aria-disabled=true]) {
+    cursor: pointer;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+}
+
+.mat-expansion-panel-header-description {
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.mat-expansion-panel-header {
+    padding: 0 24px 0 0;
+     ::ng-deep .mat-content {
+        overflow: inherit;
+    }
+}
+
+.escohlerCheckbox {
+    margin-bottom: 2rem;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled='true']) {
+    background: none;
+}
+
+.mat-panel-description {
+    .mat-checkbox {
+        margin-top: 25px;
+    }
+}
+
+ul {
+    border: 1px solid #e0e0e0;
+    margin-top: 0px;
+    padding: 0px;
+    position: relative;
+    top: -35px;
+    z-index: 9;
+    background-color: #fff;
+    box-shadow: 0px 0px 12px -5px #000;
+    width: 88%;
+    margin: auto;
+    border-radius: 5px;
+    li {
+        cursor: pointer;
+        list-style-type: none;
+        padding: 12px 10px;
+        border-bottom: solid 1px #e0e0e0;
+    }
+    li:last-child {
+        border-bottom: none;
+        word-break: break-all;
+    }
+}
+
+.hide-options {
+    display: none;
+}

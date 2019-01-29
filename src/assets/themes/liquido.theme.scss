@@ -1,0 +1,67 @@
+// Font Family and Icons
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500");
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
+// Prebuilt Themes
+// @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+// @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+// Custom Theme
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/#tools-for-picking-colors
+$app-primary: mat-palette($mat-cyan, 600);
+$app-accent:  mat-palette($mat-yellow, 700);
+// The warn palette is optional (defaults to red).
+$app-warn:    mat-palette($mat-red, 500);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+// $app-dark-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+
+// Include the theme styles for only specified components.
+// @include mat-core-theme($app-theme);
+// @include mat-checkbox-theme($app-theme);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+
+// Define a custom typography config that overrides the font-family as well as the
+// `headlines`, `body-1` and other levels with (font-size, line-height, font-weight)
+$medium:  500;
+$regular: 400;
+$light:   300;
+
+$custom-typography: mat-typography-config(
+  $font-family: 'Roboto, monospace',
+    $display-4: mat-typography-level(6.0rem,     7.0rem, $light),   /* mat-display-4 (100%, 96px, 112px. 300) */
+    $display-3: mat-typography-level(3.75rem, 4.4375rem, $light),   /* mat-display-3 (100%, 60px,  71px, 300) */
+    $display-2: mat-typography-level(3.0rem,  3.5625rem, $regular), /* mat-display-2 (100%, 48px,  57px, 400) */
+    $display-1: mat-typography-level(2.125rem,   2.5rem, $regular), /* mat-display-1 (100%, 34px,  40px, 400) */
+     $headline: mat-typography-level(1.50rem,   1.88rem, $regular), /* h1            (100%, 24px,  30px, 400) */
+        $title: mat-typography-level(1.25rem,   1.63rem, $medium),  /* h2            (100%, 20px,  26px, 500) */
+ $subheading-2: mat-typography-level(1.00rem,   1.25rem, $medium),  /* h3            (100%, 16px,  22px, 500) */
+ $subheading-1: mat-typography-level(0.88rem,   1.25rem, $medium),  /* h4            (100%, 14px,  20px, 500) */
+       $body-1: mat-typography-level(1.00rem,   1.25rem, $regular), /* body          ( 70%, 16px,  22px, 400) */
+       $body-2: mat-typography-level(0.88rem,   1.25rem, $regular), /* mat-body-2    ( 80%, 14px,  20px, 400) */
+      $caption: mat-typography-level(0.75rem,   1.13rem, $regular), /* mat-caption   ( 60%, 12px,  18px, 400) */
+       $button: mat-typography-level(0.88rem,   1.25rem, $medium)   /* button        (100%, 14px,  20px, 500) UPPERCASE */
+      /*$input: mat-typography-level(     10,        10,      60)   /* input         () */
+);
+
+// Override typography CSS classes (e.g., mat-h1, mat-display-1, mat-typography, etc.).
+// @include mat-base-typography($custom-typography);
+// Override typography for a specific Angular Material components.
+// @include mat-checkbox-typography($custom-typography);
+// Override typography for all Angular Material, including mat-base-typography and all components.
+@include angular-material-typography($custom-typography);

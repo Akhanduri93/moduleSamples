@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="189px" height="181px" viewBox="0 0 189 181" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="ampulheta" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.605636161">
+        <g id="Group-3" fill-rule="nonzero">
+            <g id="shapes_finais-09" fill="#D8D8D8" fill-opacity="0.439792799">
+                <path d="M123.120128,181 C99.9619492,180.604876 79.3139017,173.044442 60.2073704,161.308667 C38.118212,147.738808 19.389677,130.571551 7.98482009,106.78744 C0.141397021,90.4222256 -3.62084733,73.2136869 4.68916492,55.9933535 C8.80578079,47.4598526 14.1390722,39.0266071 20.6713207,32.2269344 C43.097132,8.87922888 70.5491127,-3.21628615 103.346197,0.74085212 C129.185788,3.86056321 150.979636,15.7201833 166.926355,36.4612493 C192.919506,70.2649997 194.638208,107.495125 178.963174,145.721906 C168.963991,170.101652 148.705752,180.610773 123.120128,181 Z" id="Shape"></path>
+            </g>
+            <polygon id="Triangle" fill="#E2E1E1" points="107 139 164 181 50 181"></polygon>
+            <polygon id="Triangle" fill="#E2E1E1" points="107 76 50 0 164 9.47390314e-15"></polygon>
+        </g>
+    </g>
+</svg>

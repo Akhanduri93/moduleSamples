@@ -1,0 +1,42 @@
+mat-card {
+    padding-top: 1rem !important;
+}
+
+h2 {
+    margin-bottom: 0px;
+    color: rgba(3, 54, 62, 0.87);
+}
+
+h3 {
+    margin-bottom: 0;
+    color: #03363e;
+    padding-top: 3px;
+}
+
+.info {
+    font-size: 0.8rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    opacity: 0.3;
+    margin-left: 0.5rem;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.title-icon {
+    font-size: 0.8rem;
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-top: 6px;
+}
+
+.error-icon {
+    color: #d4152c !important;
+}
+
+.arrow-icons {
+    cursor: pointer;
+}
+
+.card-padding {
+    padding-bottom: 0 !important;
+}

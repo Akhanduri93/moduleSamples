@@ -1,0 +1,30 @@
+<div fxLayout="column" class="signup-verify-modal">
+  <h3 mat-dialog-title>Introduza código</h3>
+  <mat-divider></mat-divider>
+  <mat-dialog-content fxLayout="column">
+    <p class="mat-body-2">Continue o seu processo de registo inserindo o código enviado para o seu telemóvel
+      {{setTeleNumber(verifyData)}} por SMS.</p>
+
+    <div fxFlexOffset="24px">
+      <p class="mat-body-2">O código de segurança tem validade de 30 minutos.</p>
+    </div>
+
+    <div fxFlexOffset="24px">
+      <form fxLayout="column" (ngSubmit)="verify(signupVerifyForm)" [formGroup]="signupVerifyForm">
+        <mat-form-field appearance="outline">
+          <mat-label>Código de Verificação</mat-label>
+          <input matInput formControlName="code" required [type]="'password'">
+        </mat-form-field>
+        <div fxFlexOffset="16px">
+          <button fxFlex="100" mat-flat-button color="primary" type="submit" [disabled]="signupVerifyForm.dirty && !signupVerifyForm.valid">
+            validar
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div fxFlexOffset="24px" fxLayout="row" fxLayoutAlign="center">
+      <p class="mat-body-2">Não recebeu o seu código? <a href="javascript:void(0);">Pedir reenvio</a></p>
+    </div>
+  </mat-dialog-content>
+</div>

@@ -1,0 +1,56 @@
+<app-card [title]="'MLA'" [info]="'Master Lease Agreement'" fxFlex="12 12 calc(12*100%/12 - 16px)" fxLayout="column">
+  <mat-card-content fxLayout="row" fxLayout.xs="column" fxLayoutGap="16px">
+    <div fxFlex="9 9 calc(9*100%/12 - 16px)" fxFlex.md="8 8 calc(8*100%/12 - 16px)" fxFlex.xs="100%" fxLayout="column"
+      fxLayoutAlign="end">
+      <div fxLayout="column" fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex="100%" fxLayoutAlign="end">
+        <div fxShow.xs fxHide.gt-xs fxLayout.xs="row wrap">
+          <div fxLayout.xs="column" fxFlex.xs="2 2 calc(2*100%/4 - 16px)">
+            <span class="mat-body-2">Usado</span>
+            <div>
+              <span class="mat-body-1">{{ account?.usedCredit | currencyFormat }}</span>
+            </div>
+          </div>
+          <div fxShow.xs fxLayout.xs="row wrap" fxFlex.xs="2 2 calc(2*100%/4 - 16px)" fxLayoutAlign.xs="end">
+            <div>
+              <span class="mat-body-2">Total</span>
+              <div>
+                <h3>{{ account?.availableCredit + account?.usedCredit | currencyFormat }}</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxHide.xs fxShow.gt-xs>
+          <span fxHide.xs class="mat-body-2">Usado</span>
+          <div fxHide.xs fxLayout="row wrap" fxLayoutGap="24px">
+            <div fxFlex="7 7 calc(7*100%/10 - 24px)" fxFlex.md="7 7 calc(7*100%/10 - 24px)" fxFlex.xs="5 5 calc(5*100%/10 - 24px)"
+              fxLayoutAlign="start start">
+              <span class="mat-body-1">{{ account?.usedCredit | currencyFormat }}</span>
+            </div>
+            <div fxHide.xs fxFlex="3 3 calc(3*100%/10 - 24px)" fxFlex.md="3 3 calc(3*100%/10 - 24px)" fxFlex.xs="5 5 calc(5*100%/10 - 24px)"
+              fxLayoutAlign="start start">
+              <span class="mat-body-2">Total</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="24px" fxLayoutGap.xs="0px">
+        <div fxFlex="7 7 calc(7*100%/10 - 24px)" fxFlex.md="7 7 calc(7*100%/10 - 24px)" fxFlex.xs="5 5 calc(5*100%/10 - 24px)"
+          fxLayoutAlign="start center">
+          <mat-progress-bar color="primary" matTooltipPosition="above" [matTooltip]="usedPercent | percent" mode="determinate"
+            [value]="usedPercent * 100"></mat-progress-bar>
+        </div>
+        <div fxHide.xs fxFlex="3 3 calc(3*100%/10 - 24px)" fxFlex.md="3 3 calc(3*100%/10 - 24px)" fxFlex.xs="5 5 calc(5*100%/10 - 24px)"
+          fxLayoutAlign="start start">
+          <span class="mat-headline" ngClass.xs="mat-title">{{ account?.availableCredit + account?.usedCredit |
+            currencyFormat }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div fxLayout="column" fxLayout.xs="row" fxLayoutAlign="end" fxLayoutGap="16px" fxFlex="3 3 calc(3*100%/12 - 16px)"
+      fxFlex.xs="100%">
+      <button mat-raised-button color="primary" type="button" disabled fxFlex=auto>PEDIR PROPOSTA</button>
+      <button mat-stroked-button color="primary" type="button" disabled fxFlex=auto>RENT BACK</button>
+    </div>
+  </mat-card-content>
+</app-card>

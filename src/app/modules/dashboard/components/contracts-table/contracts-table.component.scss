@@ -1,0 +1,81 @@
+.arrears {
+  border-left: 3px solid #d0021b;
+}
+
+.contract-mat {
+  .company-info {
+    .mat-subheading-2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .mat-body-2 {
+    white-space: nowrap;
+  }
+
+  .logo {
+    height: 57px !important;
+    max-height: 57px;
+    width: 57px !important;
+    max-width: 57px;
+  }
+
+  .check-circle {
+    height: 20px !important;
+    width: 20px;
+    padding-top: 2px;
+    margin-left: 0.5rem;
+
+    mat-icon {
+      font-size: 1rem;
+      height: 20px !important;
+      width: 20px;
+    }
+
+    .running {
+      color: #94e83e;
+    }
+
+    .in-arrears {
+      color: #d4152c;
+    }
+
+    .completed {
+      color: #f5a623;
+    }
+
+    .canceled {
+      color: #000000;
+    }
+  }
+
+  .no-margin {
+    margin-bottom: 2px;
+  }
+
+  .divider-margin {
+    margin-left: 0rem !important;
+  }
+}
+
+.new-feature {
+  padding-top: 2.0rem;
+  text-transform: uppercase;
+}
+
+.arrow {
+  color: #34bdce;
+  cursor: pointer;
+}
+
+mat-card-header {
+  .mat-subheading-1 {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .contract-mat {
+    padding-top: 16px !important;
+  }
+}

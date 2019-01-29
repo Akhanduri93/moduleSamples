@@ -1,0 +1,19 @@
+<app-top-nav class="app-body" fxLayout="column">
+
+  <main class="main-content" role="main" fxLayout="column" fxLayoutAlign="start center">
+    <div class="template">
+      <div [ngClass]="!(isHandset | async)!.matches ? 'container' : 'container-mobile'">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+
+  <mat-toolbar class="footer" fxLayout="row" fxLayoutAlign="center center">
+    <span class="mat-caption title-center">
+      Copyright © Liqui.do. S.A.
+      <a href="https://liqui.do/termos-e-condicoes/" target="blank">Termos e Condições</a> |
+      <a href="https://liqui.do/politica-de-privacidade/" target="blank">Política de Privacidade</a>
+    </span>
+  </mat-toolbar>
+  <mat-progress-bar class="loading" mode="determinate" color="accent" [value]="loadingValue" *ngIf="loadingValue < 100"></mat-progress-bar>
+</app-top-nav>

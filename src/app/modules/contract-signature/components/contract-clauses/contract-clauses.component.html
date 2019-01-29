@@ -1,0 +1,7 @@
+<div fxLayout="column" fxLayoutGap.xs="1rem">
+    <div class="clause-container" fxLayout="column" fxLayoutGap="1.5rem" *ngFor="let contractClause of contractClauses">
+        <h3>{{contractClause?.heading}}</h3>
+        <p *ngFor="let clause of contractClause.clauses" class="mat-body-2" [ngClass]="!(isHandset | async)!.matches ? '' : 'mobile'">{{clause}}<br>
+        </p>
+    </div>
+</div>

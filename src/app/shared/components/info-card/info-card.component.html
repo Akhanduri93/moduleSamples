@@ -1,0 +1,10 @@
+<app-card [title]="'Informações'" i18n="information title|Information card title@@infoCardTitle">
+  <mat-list role="list" fxLayout="column" fxLayoutGap="2rem">
+    <mat-list-item role="listitem" *ngFor="let point of infoPoints">
+      <div fxLayoutAlign="start start">
+        <mat-icon fxFlexAlign="start" matListIcon>fiber_manual_record</mat-icon>
+        <span class="mat-body-2" [innerHTML]="point | safe: 'html'"></span>
+      </div>
+    </mat-list-item>
+  </mat-list>
+</app-card>

@@ -1,0 +1,40 @@
+.late-payment {
+  border-left: 3px solid #d0021b;
+}
+
+mat-card {
+  padding: 1.0rem 1.0rem 1.0rem 1.0rem !important;
+}
+
+.payment-info {
+
+  .payment-delayed {
+    color: #d4152c !important;
+    margin-right: 0.5rem;
+  }
+
+  .payment-details {
+    border: none !important;
+    padding: 0.5rem 1rem 0.5rem 1rem !important;
+    background: #f3f7fa;
+  }
+
+  .no-margin {
+    margin: 0;
+  }
+}
+
+.card-style {
+  // padding: 0.5rem 1rem 0.5rem 1rem !important;
+  // border: none !important;
+  background: #f3f7fa;
+  margin-bottom: 1px;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.mat-caption{
+  margin-bottom: 0;
+}

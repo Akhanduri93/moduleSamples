@@ -1,0 +1,57 @@
+h2 {
+    word-break: break-all;
+}
+
+.card-space {
+    padding-top: 1rem !important;
+}
+
+.contract-number-space {
+    margin-top: 2.5rem;
+}
+
+.is-mobile {
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+}
+
+mat-card {
+    border: none;
+    h3 {
+        margin-bottom: 0;
+    }
+}
+
+p {
+    word-break: break-all;
+    margin-bottom: 0 !important;
+}
+
+.break-text {
+    white-space: initial;
+}
+
+.address {
+    margin-top: 0.5rem !important;
+    @media(max-width: 599px) {
+        margin-top: 0 !important;
+    }
+}
+
+.mobile {
+    .divider-padding {
+        padding-bottom: 0;
+    }
+}
+
+.stepper-button {
+    float: right;
+    margin: 0.5rem 0.5rem 0.5rem 0rem;
+}
+
+.signature-buttons {
+    margin-left: auto;
+    button {
+        letter-spacing: 0.1rem;
+    }
+}

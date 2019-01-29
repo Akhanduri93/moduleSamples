@@ -1,0 +1,46 @@
+<div *ngIf="infoTextFor === 'vendor' || infoTextFor === 'user-sign-confirm'" fxLayout="column" fxLayoutGap="64px">
+  <div fxLayout="column" *ngFor="let info of vendorSignupInfoText let j = index">
+    <div *ngIf="j === 0">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_clock.svg#clock"></use>
+      </svg>
+    </div>
+    <div *ngIf="j === 1">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_coins.svg#coin"></use>
+      </svg>
+    </div>
+    <div *ngIf="j === 2">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_card.svg#card"></use>
+      </svg>
+    </div>
+    <div fxFlexOffset="16px">
+      <h4>{{info.title}}</h4>
+    </div>
+    <div class="mat-body-2">{{info.text}}</div>
+  </div>
+</div>
+<div *ngIf="infoTextFor === 'client'" fxLayout="column" fxLayoutGap="64px">
+  <div fxLayout="column" *ngFor="let info of clientSignupInfoText let j = index">
+    <div *ngIf="j === 0">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_clock.svg#clock"></use>
+      </svg>
+    </div>
+    <div *ngIf="j === 1">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_coins.svg#coin"></use>
+      </svg>
+    </div>
+    <div *ngIf="j === 2">
+      <svg viewBox="0 0 32 32" width="32px" height="32px" class="color">
+        <use xlink:href="assets/images/icon_check.svg#check"></use>
+      </svg>
+    </div>
+    <div fxFlexOffset="16px">
+      <h4>{{info.title}}</h4>
+    </div>
+    <div class="mat-body-2">{{info.text}}</div>
+  </div>
+</div>

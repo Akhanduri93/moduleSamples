@@ -1,0 +1,143 @@
+h3 {
+  color: #03363e;
+  margin-bottom: 0 !important;
+}
+
+.mat-body-2 {
+  color: rgba(3, 54, 62, 0.8);
+}
+
+.contact-fields {
+  margin-top: 16px;
+
+  mat-form-field {
+    margin-left: 10%;
+  }
+}
+
+.mat-radio-inner-circle {
+  height: 18px !important;
+  width: 18px !important;
+  background-color: #779296 !important;
+}
+
+.mat-radio-outer-circle {
+  height: 18px !important;
+  width: 18px !important;
+  border-color: #779296 !important;
+}
+
+.mat-caption {
+  color: rgba(3, 54, 62, 0.6);
+
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.file-error {
+  padding-left: 0 !important;
+}
+
+.mat-radio-label-content {
+  padding-left: 4px !important;
+}
+
+.add-content {
+  margin-top: 1.5rem !important;
+  margin-bottom: 0.25rem !important;
+}
+
+.image-upload-button {
+  border-style: dashed !important;
+  border-width: 2px !important;
+  border-color: #979797 !important;
+  background: rgba(3, 54, 62, 0.05) !important;
+  padding: 16px 16px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image-upload {
+    height: 1.0rem;
+    padding-bottom: 0.6rem;
+  }
+
+  span {
+    font-size: 0.88rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #00ACC1;
+  }
+}
+
+.hide-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.color-warn {
+  padding-left: 1.0rem;
+  color: #f44336;
+}
+
+.field-info {
+  position: absolute;
+  right: -90%;
+  width: 90%;
+
+  .field-info-text {
+    padding-left: 30px;
+    margin-bottom: 0;
+
+    span {
+      color: rgba(3, 54, 62, 0.6);
+      margin-top: 3px;
+    }
+  }
+}
+
+.mat-subheading-1 {
+  color: #03363e;
+}
+
+.info-block {
+  margin-left: -32px !important;
+  background-color: #f3f7fa;
+  margin-bottom: -48px !important;
+  width: calc(100% + 64px);
+  .info-content {
+    padding-left: 32px;
+    padding-right: 32px;
+    padding-top: 26px;
+    padding-bottom: 48px;
+
+    .mat-caption {
+      margin-bottom: 0;
+    }
+
+    button {
+      letter-spacing: 1px;
+    }
+  }
+}
+@media (max-width: 599px) {
+  .info-block {
+      margin-left: -16px !important;
+      background-color: #f3f7fa;
+      margin-bottom: -31px !important;
+      width: calc(100% + 32px);
+      .info-content {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 26px;
+        padding-bottom: 48px;
+      }
+    }
+}
+
+.verified {
+  color: #28cd62;
+}
+

@@ -1,0 +1,24 @@
+.card {
+    padding-top: 1rem;
+    mat-icon {
+        color: #00acc1;
+        font-size: 24px;
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+        position: relative;
+    }
+    .mat-icon-button {
+        top: 0.5rem;
+        left: -2px;
+    }
+    h3 {
+        word-break: break-all;
+        .option {
+            white-space: initial !important;
+        }
+    }
+    p {
+        word-break: break-all;
+    }
+}

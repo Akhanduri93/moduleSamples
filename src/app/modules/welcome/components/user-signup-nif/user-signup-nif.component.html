@@ -1,0 +1,231 @@
+<div>
+  <form fxLayout="column" (ngSubmit)="userRegisterNif(userSignupNifForm)" [formGroup]="userSignupNifForm">
+    <mat-card-content fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>NIF</mat-label>
+        <input matInput formControlName="nif" required (change)="getDetailsFromNif()">
+        <mat-error *ngIf="userSignupNifForm.controls['nif'].invalid">{{getNifErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <div class="field-info" fxLayoutAlign="start">
+        <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+          <mat-icon>arrow_left</mat-icon>
+          <span><b>Através do NIF conseguimos pré-preencher o formulário de adesão com dados da Informa D&B.</b></span>
+        </p>
+      </div>
+
+      <div *ngIf="isLoading" fxLayoutAlign="center">
+        <mat-progress-spinner mode="indeterminate" [diameter]="50"></mat-progress-spinner>
+      </div>
+
+      <mat-form-field appearance="outline" *ngIf="!isLoading">
+        <mat-label>Nome Legal da Empresa</mat-label>
+        <input matInput formControlName="nome" required [readonly]="nameDisabled">
+        <mat-error *ngIf="userSignupNifForm.controls['nome'].invalid">{{getCNameErrorMessage()}}</mat-error>
+      </mat-form-field>
+
+      <ng-container *ngIf="isNifNull && nifFields">
+        <div fxLayout="column">
+          <div fxLayout="column">
+            <h3>Declaração de Rendimentos (último IRC disponível)</h3>
+            <mat-label class="mat-body-2" fxFlexOffset="8px">Ano da Declaração</mat-label>
+            <mat-radio-group color="accent" fxFlexOffset="6px" class="mat-label-space" formControlName="ano"
+              fxLayoutGap="8px" fxFlexOffset="8px">
+              <mat-radio-button *ngFor="let year of ano" [value]="year">
+                <span>{{year}}</span>
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div fxLayout="column" fxFlexOffset="12px">
+            <mat-label class="mat-body-2" fxFlexOffset="8px">Tipo de Anexo</mat-label>
+            <mat-radio-group color="accent" fxFlexOffset="6px" class="mat-label-space" formControlName="anexType"
+              fxLayoutGap="8px" fxFlexOffset="8px">
+              <mat-radio-button *ngFor="let type of anexType" [value]="type">
+                <span>Anexo {{type}}</span>
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+          <div fxLayout="column" fxFlexOffset="24px" *ngFor="let attachment of attachments; let i = index">
+            <mat-toolbar class="file-holder" fxLayout="row">
+              <span class="mat-body-1 hide-overflow" fxFlex=95>{{attachment.filename }}</span>
+              <div>
+                <button type="button" (click)="removeFile(i)" mat-icon-button fxLayoutAlign="center center">
+                  <mat-icon color="primary">delete</mat-icon>
+                </button>
+              </div>
+            </mat-toolbar>
+          </div>
+          <div fxLayout="column" *ngFor="let attachmentProgress of attachmentsProgressBar; let i = index">
+            <mat-progress-bar mode="determinate" value="0" *ngIf="attachmentProgress < 100"></mat-progress-bar>
+          </div>
+          <div fxLayout="column" fxFlexOffset="24px" *ngIf="uploadErrors && uploadErrors.length > 0">
+            <div fxLayout="column" *ngFor="let error of uploadErrors; let i = index">
+              <span class="mat-caption color-warn"> {{ error }}</span>
+            </div>
+          </div>
+          <p class="add-content mat-body-2">Última IRC (Anexo B ou C)</p>
+          <button type="button" mat-button (click)="inputFile.click()" class="image-upload-button">
+            <mat-icon color="primary" class="image-upload">publish</mat-icon>
+            <span> Escolher Ficheiro</span>
+          </button>
+          <div class="field-info" fxLayoutAlign="start">
+            <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+              <mat-icon>arrow_left</mat-icon>
+              <span>Dada a natureza jurídica da sua empresa - <b>Empresário em Nome Individual -</b>
+                deverá submeter o último IRC (Anexo B ou C) para validação e atribuição de scoring.</span>
+            </p>
+          </div>
+          <input #inputFile formControlName="anexFile" type="file" required [style.display]="'none'" (change)="addFile($event)">
+          <div class="mat-caption caption add-margin">
+            <p>Formato PDF até 2Mb.</p>
+          </div>
+          <div>
+            <mat-error class="mat-caption color-warn file-error" *ngIf="userSignupNifForm.controls['anexFile'].invalid && (userSignupNifForm.controls['anexFile'].dirty)">{{getFileErrorMessage()}}</mat-error>
+          </div>
+        </div>
+        <!-- <div class="field-info" fxLayoutAlign="start">
+          <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+            <mat-icon>arrow_left</mat-icon>
+            <span><b>O NIF da sua empresa é importante</b> porque (…)</span>
+          </p>
+        </div> -->
+      </ng-container>
+      <ng-container *ngIf="nifFields">
+        <mat-form-field appearance="outline" fxFlexOffset="16px">
+          <mat-label>Rua, Número, Andar…</mat-label>
+          <input matInput formControlName="address" required>
+          <mat-error *ngIf="userSignupNifForm.controls['address'].invalid">{{getAddressErrorMessage()}}</mat-error>
+        </mat-form-field>
+        <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap.gt-xs="8px">
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Código Postal</mat-label>
+            <input matInput formControlName="postalCode" required>
+            <mat-error *ngIf="userSignupNifForm.controls['postalCode'].invalid">{{getPostalCodeErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" fxFlex="50">
+            <mat-label>Localidade</mat-label>
+            <input matInput formControlName="city">
+            <mat-error *ngIf="userSignupNifForm.controls['city'].invalid">{{getCityErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="8px" fxFlexOffset="16px">
+          <mat-label class="mat-body-2">Tem poder para obrigar a empresa?</mat-label>
+          <mat-radio-group formControlName="power" class="mat-body-1" fxLayoutGap="16px">
+            <mat-radio-button (click)="updatePowerFieldToSetContactListOnTemplate('Sim')" value="Sim">Sim</mat-radio-button>
+            <mat-radio-button (click)="updatePowerFieldToSetContactListOnTemplate('Não')" value="Não">Não</mat-radio-button>
+          </mat-radio-group>
+          <div class="field-info" fxLayoutAlign="start">
+            <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+              <mat-icon>arrow_left</mat-icon>
+              <span>A pessoa indicada com poder para obrigar a empresa será contactada para validação do
+                registo na plataforma. Quem obriga tem poder perante terceiros para assumir compromissos em nome da
+                empresa. Esta informação está disponível na Certidão de Registo Comercial da empresa.</span>
+            </p>
+          </div>
+        </div>
+
+        <div *ngIf="nifContacts && powerFields" fxFlexOffset="32px">
+          <mat-radio-group formControlName="chosenContact" fxLayoutGap="16px" fxLayout="column" formArrayName="cF">
+            <span class="mat-subheading-1" fxFlexOffset="16px">{{powerMessage}}</span>
+            <span *ngFor="let contact of nifContacts; let i = index" fxLayout="row wrap" fxLayoutGap="3.12%"
+              fxLayoutAlign="start start">
+              <span fxFlex="5">
+                <mat-radio-button (click)="markContactForSubmission(i)" value="{{ contact.radioValue }}"></mat-radio-button>
+              </span>
+              <span fxLayout="column">
+                <h3 class="user-name">{{ contact.name }}</h3>
+                <span class="mat-caption user-title">{{ contact.useCargo }}</span>
+              </span>
+              <ng-container [formGroupName]="i">
+                <div fxFlex="100" class="contact-fields" *ngIf="contact.showField" fxLayout="column" fxLayoutGap="8px">
+                  <mat-form-field appearance="outline" *ngIf="contact.userNameShow">
+                    <mat-label>Nome Completo</mat-label>
+                    <input type="hidden" formControlName="userDepartment" />
+                    <input matInput formControlName="userName" (change)="updateContactNomeInNifForm(i, $event.target.value)"
+                      [readonly]="contact.userNameReadOnly">
+                    <mat-error *ngIf="userSignupNifForm.controls['cF'].controls[i].controls['userName'].invalid">{{
+                      getContactNameErrorMessage(i) }}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Cargo</mat-label>
+                    <input matInput formControlName="userCargo" (change)="updateContactCargoInNifForm(i, $event.target.value)"
+                      [readonly]="contact.cargoReadOnly">
+                    <mat-error *ngIf="userSignupNifForm.controls['cF'].controls[i].controls['userCargo'].invalid">{{
+                      getContactCargoErrorMessage(i) }}</mat-error>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="userEmail" (change)="updateContactEmailInNifForm(i, $event.target.value)"
+                      [readonly]="contact.emailReadOnly">
+                      <mat-icon *ngIf="emailVerified" class="verified" matSuffix>check</mat-icon>
+                      <mat-progress-spinner *ngIf="emailVerification" matSuffix mode="indeterminate" [diameter]="20"></mat-progress-spinner>
+                    <mat-error *ngIf="userSignupNifForm.controls['cF'].controls[i].controls['userEmail'].invalid">{{
+                      getContactEmailErrorMessage(i) }}</mat-error>
+                  </mat-form-field>
+                </div>
+              </ng-container>
+            </span>
+          </mat-radio-group>
+        </div>
+        <ng-container *ngIf="nifContacts.length === 0 && powerFields">
+          <mat-form-field appearance="outline">
+            <mat-label>Nome Completo</mat-label>
+            <input matInput formControlName="forceName" required [readonly]="powerNameReadOnly">
+            <mat-error *ngIf="userSignupNifForm.controls['forceName'].invalid">{{getForceNameErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Cargo</mat-label>
+            <input matInput formControlName="forceCargo" required [readonly]="powerCargoReadOnly">
+            <mat-error *ngIf="userSignupNifForm.controls['forceCargo'].invalid">{{getForceCargoErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="forceEmail" (change)="checkIfExists()" required [readonly]="powerEmailReadOnly">
+            <mat-icon *ngIf="emailVerified" class="verified" matSuffix>check</mat-icon>
+            <mat-progress-spinner *ngIf="emailVerification" matSuffix mode="indeterminate" [diameter]="20"></mat-progress-spinner>
+            <mat-error *ngIf="userSignupNifForm.controls['forceEmail'].invalid">{{getForceEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+        </ng-container>
+      </ng-container>
+
+      <div fxFlexOffset="42px" fxlayout="column" class="info-block" *ngIf="alreadyExistBlock">
+        <div class="info-content" fxLayout="column">
+          <p class="mat-caption">Conta já existente. O NIF indicado já se encontra associado a uma conta. Ao continuar
+            para o login insira os seus dados de acesso para validarmos o seu perfil.</p>
+          <div fxFlexOffset="39px" fxLayout.xs="column">
+            <div fxFlex="50" fxFlex.xs="100" fxLayoutAlign.xs="center center" fxLayoutAlign.gt-sm="start">
+              <button mat-button color="primary" type="button" (click)="navigateBackToSignUpForm()" [disabled]="isLoading">
+                <mat-icon aria-label="navigate Back with an arrow icon">arrow_back</mat-icon>
+                Voltar
+              </button>
+            </div>
+            <div fxFlex="50" fxFlex.xs="100" fxFlexOffset.xs="16px" fxLayoutAlign.xs="center center"
+              fxLayoutAlign.gt-sm="end">
+              <button routerLink="/login" mat-flat-button color="primary" type="button">
+                continuar para o login
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div fxFlexOffset="42px" *ngIf="!alreadyExistBlock">
+        <div fxFlex="50" fxLayoutAlign="start">
+          <button mat-button color="primary" type="button" (click)="navigateBackToSignUpForm()" [disabled]="isLoading">
+            <mat-icon aria-label="navigate Back with an arrow icon">arrow_back</mat-icon>
+            Voltar
+          </button>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end" *ngIf="user.type === 'vendor'">
+          <button mat-flat-button color="primary" type="submit" [disabled]="!(enableSubmit && userSignupNifForm.valid)">
+            continuar
+          </button>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end" *ngIf="user.type === 'client'">
+          <button mat-flat-button color="primary" type="submit" [disabled]="!userSignupNifForm.valid">
+            Concluir
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </form>
+</div>

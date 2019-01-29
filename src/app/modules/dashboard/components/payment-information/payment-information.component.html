@@ -1,0 +1,23 @@
+<div fxLayout="column" fxLayoutGap="16px">
+  <app-card
+      [title]="'Emissão de Próximas Rendas'"
+      *ngIf="existsNextInvoices() && isNextInvoicesPage()"
+      fxFlex="12 12 calc(12*100%/12 - 16px)"
+      fxLayout="column"
+      class="payment-info">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="1.0rem">
+      <mat-card
+          class="mat-elevation-z0 card-style"
+          *ngFor="let invoice of upcomingInvoices"
+          fxLayoutGap="1.0rem"
+          fxFlex="4 4 calc(4*100%/12 - 16px)"
+          fxFlex.xs="2 2 calc(2*100%/4 - 16px)">
+        <div fxLayout="column" fxLayoutGap="8px" class="nowrap">
+          <p class="mat-body-2">{{ invoice.dueDate | date:'dd MMM yyyy' }}</p>
+          <p class="mat-subheading-2">{{invoice.total | currencyFormat}}</p>
+          <p class="mat-caption">{{invoice.applicationNumber}}</p>
+        </div>
+      </mat-card>
+    </div>
+  </app-card>
+</div>

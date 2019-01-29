@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pt-PT" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="loginTitle" datatype="html">
+        <source>Iniciar Sessão</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">A title for the login page</note>
+        <note priority="1" from="meaning">page title</note>
+      </trans-unit>
+      <trans-unit id="loginSubtitle" datatype="html">
+        <source>Insira os dados abaixo para continuar.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">A subtitle for the login page</note>
+        <note priority="1" from="meaning">page subtitle</note>
+      </trans-unit>
+      <trans-unit id="loginEmail" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">Input for email</note>
+        <note priority="1" from="meaning">email form</note>
+      </trans-unit>
+      <trans-unit id="loginPassword" datatype="html">
+        <source>Palavra-passe</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <note priority="1" from="description">Input for password</note>
+        <note priority="1" from="meaning">password form</note>
+      </trans-unit>
+      <trans-unit id="loginLinkToRecoverPassword" datatype="html">
+        <source>
+              Esqueceu a sua palavra-passe?
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+        <note priority="1" from="description">Link to recover-password page</note>
+        <note priority="1" from="meaning">forgot password</note>
+      </trans-unit>
+      <trans-unit id="loginRemember" datatype="html">
+        <source>
+              Lembrar-me mais tarde
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+        <note priority="1" from="description">Checkbox to remember authentication</note>
+        <note priority="1" from="meaning">remember me</note>
+      </trans-unit>
+      <trans-unit id="loginSubmitButton" datatype="html">
+        <source>
+              Seguinte
+            </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <note priority="1" from="description">Button to confirm authentication</note>
+        <note priority="1" from="meaning">login button</note>
+      </trans-unit>
+      <trans-unit id="loginNoAccount" datatype="html">
+        <source>Ainda não tem uma conta?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+        <note priority="1" from="description">No account label</note>
+        <note priority="1" from="meaning">no account</note>
+      </trans-unit>
+      <trans-unit id="loginCreateAccount" datatype="html">
+        <source>Criar Conta</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/welcome/login/login.component.ts</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+        <note priority="1" from="description">Link to go to create account page</note>
+        <note priority="1" from="meaning">create account</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

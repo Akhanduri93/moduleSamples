@@ -1,0 +1,60 @@
+<form #form="ngForm" [formGroup]="signatureForm">
+    <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="1.5rem" fxLayoutGap.xs="0">
+        <div fxLayout="column" fxFlex="7 7 calc(7*100%/12 - 24px)">
+            <mat-form-field appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="name">
+            </mat-form-field>
+        </div>
+        <div fxLayout="column" fxFlex="5 5 calc(5*100%/12 - 24px)" fxLayoutAlign="left">
+            <div fxLayout fxLayoutGap="1.5rem">
+                <mat-form-field fxFlex="6 6 calc(6*100%/12 - 24px)" appearance="outline">
+                    <mat-label>Telemóvel</mat-label>
+                    <input matInput formControlName="telephoneNumber" required>
+                    <mat-error *ngIf="signatureForm.controls['telephoneNumber'].invalid">
+                        <span>{{getPhoneErrorMessage()}}</span>
+                    </mat-error>
+                </mat-form-field>
+                <div fxFlex="6 6 calc(6*100%/12 - 24px)" fxHide.lt-md></div>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="(!accepted && (personalGuarantee && personalGuarantee.name)) || !signer.name " fxLayout="column" fxLayoutGap="1.5rem" fxLayoutGap.xs="1.5rem">
+        <div fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="1.5rem" fxLayoutGap.xs="0rem">
+            <mat-form-field fxFlex="7 7 calc(7*100%/12 - 24px)" appearance="outline">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="street" required>
+                <mat-error *ngIf="signatureForm.controls['street'].invalid ">
+                    <span *ngIf="signatureForm.controls['street'].errors.required">Rua é obrigatório.</span>
+                </mat-error>
+            </mat-form-field>
+            <div fxLayout="column" fxFlex="5 5 calc(5*100%/12 - 24px)">
+                <mat-form-field appearance="outline">
+                    <mat-label>NIF</mat-label>
+                    <input matInput formControlName="nif" required>
+                    <mat-error *ngIf="signatureForm.controls['nif'].invalid ">
+                        <span>{{getNifErrorMessage()}}</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="top-space" fxLayout fxLayout.xs="column" fxLayoutAlign="left" fxLayoutGap="1.5rem" fxLayoutGap.sm="1rem" fxLayoutGap.xs="0rem">
+            <mat-form-field fxFlex="2 2 calc(2*100%/12 - 24px)" fxFlex.sm="2 2 calc(2*100%/8 - 16px)" appearance="outline">
+                <mat-label>Código Postal</mat-label>
+                <input matInput formControlName="postalCode" required>
+                <mat-error *ngIf="signatureForm.controls['postalCode'].invalid ">
+                    <span>{{getPostalCodeErrorMessage()}}</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="3 3 calc(3*100%/12 - 24px)" fxFlex.sm="2 2 calc(2*100%/8 - 16px)" appearance="outline">
+                <mat-label>Cidade</mat-label>
+                <input matInput formControlName="city" required>
+                <mat-error *ngIf="signatureForm.controls['city'].invalid ">
+                    <span *ngIf="signatureForm.controls['city'].errors.required">Cidade é obrigatório.</span>
+                </mat-error>
+            </mat-form-field>
+            <div fxFlex="7 7 calc(7*100%/12 -24px)" fxFlex.sm="4 4 calc(4*100%/8 - 16px)" fxHide.lt-sm></div>
+        </div>
+    </div>
+</form>

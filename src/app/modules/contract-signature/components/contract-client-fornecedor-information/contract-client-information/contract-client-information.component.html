@@ -1,0 +1,35 @@
+<div class="card" fxLayout="column" fxLayoutGap="1.5rem">
+    <div>
+        <h2>{{clientInfo?.name}}</h2>
+        <div fxLayout="column" fxLayoutGap="0.5rem">
+            <mat-label class="mat-caption">NIF/NIPC</mat-label>
+            <h3>{{clientInfo?.nif}}</h3>
+        </div>
+    </div>
+    <div fxLayout fxLayout.xs="column" fxLayoutGap="10.5rem" fxLayoutGap.xs="1rem">
+        <div>
+            <p class="mat-caption">Morada da Empresa</p>
+            <h3>{{clientInfo?.street + ','}} {{clientInfo?.num}}{{clientInfo?.floor}} <br> {{clientInfo?.postalCode}} {{clientInfo?.city}}
+                <br> {{clientInfo?.country}}
+            </h3>
+        </div>
+        <div fxLayout="column">
+            <div>
+                <p class="mat-caption">Morada de Entrega do Equipamento</p>
+                <h3>
+                    <mat-checkbox [checked]="showPanel" (change)="changeEquipmentAddress($event)"><span class="option">Igual à morada da
+                        Empresa</span></mat-checkbox>
+                </h3>
+                <div fxLayout="row" *ngIf="!showPanel">
+                    <h3 id="equipment-info">{{equipmentInfo?.street + ','}} {{equipmentInfo?.num }}{{equipmentInfo?.floor}}
+                        <br> {{equipmentInfo?.postalCode}} {{equipmentInfo?.city}}
+                        <br>{{equipmentInfo?.country}}
+                    </h3>
+                    <button color="primary" mat-icon-button>
+                        <mat-icon (click)="openEditAddressDialog('equipment')">edit</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

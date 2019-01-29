@@ -1,0 +1,42 @@
+h1 {
+  color: #03363e;
+  margin-bottom: 0.5rem;
+}
+
+.mat-caption {
+  mat-icon {
+    font-size: 16px;
+    height: 18px;
+    width: 18px;
+  }
+}
+
+.mat-body-2 {
+  color: #03363ecc;
+  margin-bottom: 0;
+}
+
+.signup-confirm {
+  .confirm-head {
+    color: #00acc1 !important;
+    h1 {
+      color: #00acc1;
+      word-break: break-all;
+    }
+    mat-icon {
+      font-size: 40px;
+      height: 40px;
+      width: 40px;
+    }
+  }
+  mat-divider {
+    position: relative;
+  }
+
+  .confirm-list-icon {
+    color: rgba(3, 54, 62, 0.6);
+    font-size: 6px;
+    height: 6px;
+    width: 6px;
+  }
+}

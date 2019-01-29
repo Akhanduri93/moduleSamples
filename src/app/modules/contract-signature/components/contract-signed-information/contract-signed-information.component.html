@@ -1,0 +1,23 @@
+<div *ngIf="signedInfo?.name" fxLayout="column" fxLayoutGap="2rem" fxFlex="6 6 calc(6*100%/12 - 16px)" fxFlex.lt-md="12 12 calc(12*100%/12 - 16px)">
+    <div class="signed-block" fxLayout="column">
+        <div fxLayout fxFlex="1 1 calc(1*100%/12 - 16px)" fxLayoutGap="0.5rem">
+            <img class="logo" src="assets/images/E_Signed_Icone.png" alt='' />
+            <div fxLayout="column" fxLayoutGap="1rem">
+                <mat-label>Esigned by:</mat-label>
+                <div fxLayout="column" fxLayoutGap="0.5rem">
+                    <h3>{{signedInfo?.name}}</h3>
+                    <div fxLayout>
+                        <p class="top-border"><span class="mat-body-2 signed-id">{{signedInfo?.id}}</span>
+                            <span [ngClass]="!(isHandset | async)!.matches ? '' : 'no-space'" class="mat-body-2 text-color">{{signedInfo?.date|date:'d/M/yyyy
+                                HH:mm'}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <button mat-flat-button type="button" (click)="navigateTo()">Finalizar</button>
+    </div>
+</div>
+<div fxFlex="6 6 calc(6*100%/12 - 16px)" fxHide.lt-md></div>

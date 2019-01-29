@@ -1,0 +1,30 @@
+<div class="app" fxLayout="column">
+    <mat-toolbar class="top" fxLayout="row">
+        <a href="https://liqui.do">
+            <svg width="348px" viewBox="0 0 348 70" class="logo">
+        <use xlink:href="assets/images/logo/logo.svg#logo"></use>
+      </svg>
+        </a>
+        <a class="mat-body-1 link-color" [routerLink]="['/portal/support/knowledge-base/help-center']">
+            <mat-icon>help_outline</mat-icon> CENTRO DE AJUDA</a>
+
+        <!-- <span class="spacer" *ngIf="!(isHandset | async)!.matches"></span>
+    <p class="mat-body-2" fxLayoutAlign="end center" *ngIf="!(isHandset | async)!.matches && !hide">Ainda não tem uma
+      conta? &nbsp;
+      <a href="https://liqui.do/pedido-de-contacto/">Criar Conta</a>
+    </p> -->
+    </mat-toolbar>
+
+    <div [ngClass]="!(isHandset | async)!.matches ? '' : 'isMobile'">
+        <mat-divider *ngIf="!(progressDivider)" class="divider-padding" fxFlex.sm=100 fxFlex.xs=100></mat-divider>
+        <mat-progress-bar *ngIf="progressDivider" color="accent" mode="determinate" [value]="progressValue" fxFlex.sm=100 fxFlex.xs=100></mat-progress-bar>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center start" fxFlex class="welcome-block">
+        <div class="template" fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="center start" fxFlex>
+            <div class="welcome-block" [ngClass]="!(isHandset | async)!.matches ? 'container' : 'container-mobile'" fxLayoutAlign="center start">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="57px" height="57px" viewBox="0 0 57 57" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Dashboard-client" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dashboard-client/V3" transform="translate(-386.000000, -489.000000)">
+            <g id="Group-4" transform="translate(386.000000, 489.000000)">
+                <rect id="Rectangle" stroke="#F3F7FA" fill="#F3F7FA" fill-rule="nonzero" x="0.5" y="0.5" width="56" height="56"></rect>
+                <g id="outline-location_city-24px" transform="translate(7.000000, 8.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 42 0 42 42 0 42"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(5.250000, 3.500000)" fill="#C3CFDB" fill-rule="nonzero">
+                        <path d="M21,15.75 L21,5.25 L15.75,0 L10.5,5.25 L10.5,8.75 L0,8.75 L0,33.25 L31.5,33.25 L31.5,15.75 L21,15.75 Z M7,29.75 L3.5,29.75 L3.5,26.25 L7,26.25 L7,29.75 Z M7,22.75 L3.5,22.75 L3.5,19.25 L7,19.25 L7,22.75 Z M7,15.75 L3.5,15.75 L3.5,12.25 L7,12.25 L7,15.75 Z M17.5,29.75 L14,29.75 L14,26.25 L17.5,26.25 L17.5,29.75 Z M17.5,22.75 L14,22.75 L14,19.25 L17.5,19.25 L17.5,22.75 Z M17.5,15.75 L14,15.75 L14,12.25 L17.5,12.25 L17.5,15.75 Z M17.5,8.75 L14,8.75 L14,5.25 L17.5,5.25 L17.5,8.75 Z M28,29.75 L24.5,29.75 L24.5,26.25 L28,26.25 L28,29.75 Z M28,22.75 L24.5,22.75 L24.5,19.25 L28,19.25 L28,22.75 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

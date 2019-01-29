@@ -1,0 +1,19 @@
+<h3 mat-dialog-header>Cancelar Aplicação</h3>
+<mat-divider></mat-divider>
+<form [formGroup]="cancellationForm" (ngSubmit)="submitCancelApplicationDescription(cancellationForm)">
+  <mat-dialog-content>
+    <div fxLayout="column" fxLayoutGap="1.5rem">
+      <h3>Indique-nos o motivo pelo qual pretende cancelar a aplicação.</h3>
+      <mat-radio-group fxLayout="column" fxLayoutGap="1rem" formControlName='reason'>
+        <mat-radio-button *ngFor="let option of selectOptions" [value]="option"><span class="mat-body option">{{option}}</span></mat-radio-button>
+      </mat-radio-group>
+      <mat-form-field appearance="outline">
+        <textarea matInput placeholder="Descrição" formControlName='comment'></textarea>
+      </mat-form-field>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions fxLayout fxLayoutGap="0.5rem" fxLayoutAlign="end" fxLayoutAlign.xs="center">
+    <button mat-button color="primary" [disabled]="isLoading" mat-dialog-close>Voltar</button>
+    <button mat-flat-button type="submit" [disabled]="cancellationForm.invalid || isLoading">Confirmar</button>
+  </mat-dialog-actions>
+</form>

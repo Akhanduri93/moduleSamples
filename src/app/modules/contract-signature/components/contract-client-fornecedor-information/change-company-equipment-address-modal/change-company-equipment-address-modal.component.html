@@ -1,0 +1,61 @@
+<h3 mat-dialog-header>{{modalTitle}}</h3>
+<mat-divider></mat-divider>
+<form [formGroup]="changeAddressForm" (ngSubmit)="updateAddress(changeAddressForm)">
+    <mat-dialog-content>
+        <div fxLayout="column" fxLayoutGap="0.5rem">
+            <mat-form-field appearance="outline">
+                <mat-label>Rua</mat-label>
+                <input matInput formControlName="street" #street required>
+                <mat-error *ngIf="street.invalid">
+                    <span *ngIf="changeAddressForm.controls['street'].errors.required">Rua é obrigatório.</span>
+                </mat-error>
+            </mat-form-field>
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="1.5rem" fxLayoutGap.xs="0">
+                <mat-form-field fxFlex="3 3 calc(3*100%/12 - 24px)" appearance="outline">
+                    <mat-label>Num</mat-label>
+                    <input matInput formControlName="num" required>
+                    <mat-error *ngIf="changeAddressForm.controls['num'].invalid">
+                        <span *ngIf="changeAddressForm.controls['num'].errors.required">Num é obrigatório.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="5 5 calc(5*100%/12 - 24px)" appearance="outline">
+                    <mat-label>Andar</mat-label>
+                    <input matInput formControlName="floor">
+                </mat-form-field>
+                <div fxFlex="4 4 calc(4*100%/12 - 24px)">
+                </div>
+            </div>
+            <div fxLayout fxLayout.xs="column" fxLayoutAlign="start" fxLayoutGap="24px" fxLayoutGap.xs="0">
+                <mat-form-field fxFlex="4 4 calc(4*100%/12 - 24px)" appearance="outline">
+                    <mat-label>Códio</mat-label>
+                    <input matInput formControlName="code" required>
+                    <mat-error *ngIf="changeAddressForm.controls['code'].invalid">
+                        <span *ngIf="changeAddressForm.controls['code'].errors.required">Códio é obrigatório.</span>
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="8 8 calc(8*100%/12 - 24px)" appearance="outline">
+                    <mat-label>Cidade</mat-label>
+                    <input matInput formControlName="city" required>
+                    <mat-error *ngIf="changeAddressForm.controls['city'].invalid">
+                        <span *ngIf="changeAddressForm.controls['city'].errors.required">Cidade é obrigatório.</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <mat-form-field appearance="outline">
+                <mat-label>Pais</mat-label>
+                <mat-select formControlName="country" placeholder="Select pais" required>
+                    <mat-option *ngFor="let country of countryOptions" [value]="country.code">
+                        {{country.country}}
+                    </mat-option>
+                </mat-select>
+                <mat-error *ngIf="changeAddressForm.controls['country'].invalid">
+                    <span *ngIf="changeAddressForm.controls['country'].errors.required">Pais é obrigatório.</span>
+                </mat-error>
+            </mat-form-field>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayout fxLayoutGap="0.5rem" fxLayoutAlign="end" fxLayoutAlign.xs="center">
+        <button mat-button type="button" [disabled]="isLoading" color="primary" mat-dialog-close>Cancelar</button>
+        <button mat-flat-button type="submit" [disabled]="changeAddressForm.invalid || isLoading">Confirmar</button>
+    </mat-dialog-actions>
+</form>

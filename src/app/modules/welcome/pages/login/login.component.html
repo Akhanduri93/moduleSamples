@@ -1,0 +1,86 @@
+<app-welcome>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.lt-md="16px" fxLayoutGap="24px" fxFlex>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+
+    <div fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex.sm="8 8 calc(8*100%/8 - 16px)" fxFlex.gt-sm="5 5 calc(5*100%/12 - 24px)"
+      fxLayout="column" [ngClass]="!(isHandset | async)!.matches ? '' : 'isMobile'">
+
+      <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="4px">
+        <h1 i18n="page title|A title for the login page@@loginTitle">Iniciar Sessão</h1>
+
+        <div fxLayout="column" fxLayoutGap="32px">
+          <p class="mat-body-2" i18n="page subtitle|A subtitle for the login page@@loginSubtitle">Insira os dados
+            abaixo para continuar.</p>
+          <form (ngSubmit)="login(loginFormRxjs)" [formGroup]="loginFormRxjs">
+            <mat-card-content fxLayout="column">
+
+              <mat-form-field appearance="outline">
+                <mat-label i18n="email form|Input for email@@loginEmail">Email</mat-label>
+                <input matInput [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="outline">
+                <mat-label i18n="password form|Input for password@@loginPassword">Palavra-passe</mat-label>
+                <input matInput [formControl]="password" [type]="hide ? 'password' : 'text'" required autocomplete="new-password">
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+              </mat-form-field>
+
+              <a routerLink="/recover-password" class="mat-body-2" i18n="forgot password|Link to recover-password page@@loginLinkToRecoverPassword">
+                Esqueceu a sua palavra-passe?
+              </a>
+            </mat-card-content>
+
+            <div fxLayout="row" fxLayout.lt-md="column" fxLayoutAlign="space-between center" fxLayoutAlign.lt-md="start start"
+              fxLayoutGap.lt-md="24px">
+              <mat-checkbox [(ngModel)]="sessionSaved" [ngModelOptions]="{standalone: true}" class="mat-caption" i18n="remember me|Checkbox to remember authentication@@loginRemember">
+                Lembrar-me mais tarde
+              </mat-checkbox>
+              <button mat-flat-button [ngClass]="!(isHandset | async)!.matches ? '' : 'stretch'" color="primary" type="submit"
+                [disabled]="loginFormRxjs.dirty && !loginFormRxjs.valid" i18n="login button|Button to confirm authentication@@loginSubmitButton">
+                Seguinte
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <mat-card-footer fxLayout="column">
+          <mat-divider></mat-divider>
+          <p class="mat-caption" fxFlexOffset="32px">Ainda não tem uma conta?</p>
+          <div fxLayout="row wrap">
+            <div fxLayout="column" fxFlexOffset="5px">
+              <p class="mat-caption">Se é revendedor de equipamentos e quer disponibilizar a opção de renting aos seus
+                clientes <a routerLink="/signup/vendor">faça o seu registo aqui.</a></p>
+              <!-- <p class="mat-caption">Quer calcular as suas rendas, alugar equipamentos ou gerir o seu contrato? <a
+                  routerLink="/signup/client">Faça o seu registo como cliente.</a></p> -->
+            </div>
+          </div>
+        </mat-card-footer>
+      </mat-card>
+
+      <!-- <p class="mat-body-2" fxLayoutAlign="center none" [ngClass]="!(isHandset | async)!.matches ? '' : 'stretch'"
+        *ngIf="(isHandset | async)!.matches">
+        <span i18n="no account|No account label@@loginNoAccount">Ainda não tem uma conta?</span>
+        &nbsp;
+        <a href="https://liqui.do/pedido-de-contacto/" i18n="create account|Link to go to create account page@@loginCreateAccount">Criar Conta</a>
+      </p> -->
+
+      <mat-divider fxShow.xs="true" fxShow.sm="true" fxHide></mat-divider>
+
+      <div class="add-padding" [ngClass]="!(isHandset | async)!.matches ? '' : 'terms-mobile'" fxLayout="row"
+        fxLayoutAlign="center center" fxLayoutAlign.xs="space-evenly center" fxLayoutAlign.sm="space-evenly center">
+        <app-terms-conditions></app-terms-conditions>
+      </div>
+    </div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="4 4 calc(4*100%/12 - 24px)" fxLayoutAlign="start" fxLayout="column">
+      <app-welcome-text fxFlexOffset="100px"></app-welcome-text>
+    </div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+  </div>
+</app-welcome>

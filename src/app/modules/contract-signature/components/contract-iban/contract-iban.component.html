@@ -1,0 +1,29 @@
+<div class="card" fxLayout="column" fxLayoutGap="0.5rem">
+    <div fxLayoutGap="0.625rem" fxLayout="column" fxLayoutGap.lt-md="0.5rem">
+        <mat-label class="mat-caption caption-label">IBAN:</mat-label>
+        <div fxLayout fxLayout.xs="column" fxLayoutAlign="start start" fxLayoutGap="1.5rem" fxLayoutGap.lt-sm="0.5rem" fxFlex="5 5 calc(5*100%/12 - 24px)">
+            <div fxLayoutGap.gt-xs="0.5rem">
+                <div fxLayoutAlign.xs="start start">
+                    <h3 class="label-value">{{ibanInfo}}</h3>
+                </div>
+                <div fxLayoutAlign.xs="end" fxFlex>
+                    <button color="primary" mat-icon-button>
+                <mat-icon (click)="openEditIbanDialog()">edit</mat-icon>
+              </button>
+                </div>
+            </div>
+            <div fxHide.lt-sm>
+                <mat-checkbox [checked]="false" (change)="changeIbanDeclaration($event)" fxFlex="7 7 calc(7*100%/12 - 24px)">
+                    <span class="mat-body label-value">Declaro e Confirmo que este IBAN está associado à minha empresa.</span>
+                </mat-checkbox>
+            </div>
+            <div fxShow.lt-sm fxHide.gt-xs>
+                <mat-checkbox [checked]="false" (change)="changeIbanDeclaration($event)" fxFlex="7 7 calc(7*100%/12 - 24px)">
+                    <span class="mat-body-2 label-value">Declaro e Confirmo que este IBAN está associado à minha empresa.</span>
+                </mat-checkbox>
+            </div>
+        </div>
+    </div>
+    <span class="mat-caption condition">* O Preenchimento do seu IBAN é obrigatório, mesmo que tenha optado pelo
+    pagamento através de Referência Multibanco.</span>
+</div>

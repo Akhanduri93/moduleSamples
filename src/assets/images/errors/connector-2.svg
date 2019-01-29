@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="823px" height="371px" viewBox="0 0 823 371" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Error-500" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.301116071">
+        <g id="500-error" transform="translate(-1097.000000, -43.000000)" fill-rule="nonzero">
+            <g id="Group-5" transform="translate(1075.000000, 46.000000)">
+                <path d="M113,0.680079774 L389.882813,0.680079774 C570.583333,-8.58554523 570.583333,76.8272152 389.882813,256.918361 C209.182292,437.009507 360.796875,391.664455 844.726562,120.883205" id="Path-2" stroke="#D8D8D8" stroke-width="6" transform="translate(478.863281, 182.409291) scale(-1, -1) translate(-478.863281, -182.409291) "></path>
+                <g id="Group" transform="translate(113.308312, 246.255753) rotate(-210.000000) translate(-113.308312, -246.255753) translate(22.308312, 177.255753)" fill="#D8D8D8">
+                    <path d="M8,4.07317492e-16 L151.482803,8.8817842e-15 C154.804291,8.27163692e-15 157.78028,2.05238971 158.960622,5.15707453 L181.210357,63.6811142 C181.882967,65.450297 181.906518,67.4006562 181.276826,69.1855651 L158.883343,132.661525 C157.754768,135.860554 154.731321,138 151.339055,138 L8,138 C3.581722,138 5.41083001e-16,134.418278 0,130 L0,8 C-5.41083001e-16,3.581722 3.581722,8.11624501e-16 8,0 Z" id="Rectangle"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

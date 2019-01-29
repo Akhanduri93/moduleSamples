@@ -1,0 +1,95 @@
+<app-welcome [progressValue]="signupProgress">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap.lt-md="16px" fxLayoutGap="24px" fxFlex>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+
+    <div fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex.sm="8 8 calc(8*100%/8 - 16px)" fxFlex.gt-sm="5 5 calc(5*100%/12 - 24px)"
+      fxLayout="column">
+
+      <mat-card class="mat-elevation-z0" fxLayout="column" fxLayoutGap="4px">
+
+        <div *ngIf="signupFor === 'vendor'">
+          <h1>Torne-se Parceiro da Liqui.do</h1>
+          <div fxLayout="column" fxLayoutGap="32px">
+            <p class="mat-body-2">Preencha os campos abaixo</p>
+            <app-user-signup [user]="signingUpUser" (verified)="registerNifUser($event)"></app-user-signup>
+          </div>
+        </div>
+
+        <div *ngIf="signupFor === 'client'">
+          <h1>Solicitar Renting</h1>
+          <div fxLayout="column" fxLayoutGap="32px">
+            <p class="mat-body-2">Preencha os campos abaixo para criar a sua conta de cliente</p>
+            <app-user-signup [user]="signingUpUser" (verified)="registerNifUser($event)"></app-user-signup>
+          </div>
+        </div>
+
+        <div *ngIf="signupFor === 'user-nif'">
+          <h1>Informação da Empresa</h1>
+          <div fxLayout="column" fxLayoutGap="32px">
+            <p class="mat-body-2">Precisamos apenas de mais alguns dados sobre a sua empresa.</p>
+            <app-user-signup-nif [user]="signingUpUser" (nifRegistered)="registerUser($event)" (goToBackToSignUpForm)="goToSignUp($event)"></app-user-signup-nif>
+          </div>
+        </div>
+
+        <div *ngIf="signupFor === 'user-cat'">
+          <h1>Área de negócio</h1>
+          <div fxLayout="column" fxLayoutGap="32px">
+            <p class="mat-body-2">Queremos ajudá-lo a ligar-se aos seus potenciais clientes. Selecione a(s)
+              categoria(s) da sua área de negócio.</p>
+            <app-user-signup-cat [user]="signingUpUser" (registerCat)="userRegistered($event)" (goToBackToNif)="goToNifForm($event)"></app-user-signup-cat>
+          </div>
+        </div>
+
+        <div *ngIf="signupFor === 'user-sign-confirm'" fxLayout="column" class="signup-confirm">
+          <div fxLayout="column">
+            <div fxLayout="row wrap" class="confirm-head">
+              <div fxFlex="80">
+                <h1>Enviámos um email para {{signingUpUser.email}}</h1>
+              </div>
+              <div fxFlex="20" fxLayoutAlign="center center">
+                <mat-icon class="confirm-send">send</mat-icon>
+              </div>
+            </div>
+            <div fxFlexOffset="24px">
+              <p class="mat-body-2">Para validarmos a sua conta e prosseguir para o Portal, verifique a sua caixa de
+                email e siga os passos indicados.</p>
+            </div>
+          </div>
+          <mat-divider fxFlexOffset="40px"></mat-divider>
+          <div fxFlexOffset="16px" fxLayout="column">
+            <p class="mat-caption">Caso não encontre o email, verifique se:</p>
+            <div fxLayout="column" fxFlexOffset="-6px">
+              <div fxLayoutAlign="start center">
+                <mat-icon fxFlexOffset="5px" class="confirm-list-icon">fiber_manual_record</mat-icon>
+                <span fxFlexOffset="5px" class="mat-caption">O email foi para o spam ou outra pasta;</span>
+              </div>
+              <div fxLayoutAlign="start center">
+                <mat-icon fxFlexOffset="5px" class="confirm-list-icon">fiber_manual_record</mat-icon>
+                <span fxFlexOffset="5px" class="mat-caption">O email está correto;</span>
+              </div>
+              <div fxLayoutAlign="start center">
+                <mat-icon fxFlexOffset="5px" class="confirm-list-icon">fiber_manual_record</mat-icon>
+                <span fxFlexOffset="5px" class="mat-caption">O email corresponde ao da sua conta.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-card>
+      <div class="mat-caption" fxLayoutAlign="start" fxFlexOffset="3px">
+        <mat-icon>https</mat-icon>
+        A sua segurança é a nossa prioridade: utilizamos os padrões de segurança mais avançados.
+      </div>
+    </div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="4 4 calc(4*100%/12 - 24px)" fxLayoutAlign="start start" fxLayout="column">
+      <div fxFlexOffset="48px">
+        <app-signup-infotext [infoTextFor]="signupFor"></app-signup-infotext>
+      </div>
+    </div>
+
+    <div fxHide.lt-md fxFlex.gt-sm="1 1 calc(1*100%/12 - 24px)"></div>
+  </div>
+</app-welcome>

@@ -1,0 +1,86 @@
+<div *ngIf="categoryFields.length">
+  <form fxLayout="column" (ngSubmit)="userRegisterCat(userSignupCatForm)" [formGroup]="userSignupCatForm">
+    <mat-card-content fxLayout="column">
+      <ng-container formArrayName="cF">
+        <mat-accordion *ngFor="let fields of categoryFields.controls; let i = index">
+          <mat-expansion-panel [formGroupName]="i" [disabled]="true" [expanded]="industry === i" (opened)="showIndustry(i)"
+            hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <mat-checkbox [disableRipple]="true" (change)="setCategory(i)" formControlName="userCheck"><span class="mat-body-1">{{signupCats[i].catename}}</span></mat-checkbox>
+                <input type="hidden" formControlName="catName" />
+              </mat-panel-title>
+              <mat-panel-description fxFlex fxLayoutAlign="end" *ngIf="fields.controls.subF.controls.length">
+                <mat-icon class="arrow-icons" *ngIf="industry === i" color="primary" (click)="hideIndustry(i)">keyboard_arrow_up</mat-icon>
+                <mat-icon class="arrow-icons" *ngIf="industry !== i" color="primary" (click)="showIndustry(i)">keyboard_arrow_down</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+            <mat-nav-list *ngIf="fields.controls.subF.controls.length">
+              <ng-container formArrayName="subF">
+                <mat-list-item *ngFor="let subFields of fields.controls.subF.controls; let j = index">
+                  <div [formGroupName]="j">
+                    <mat-checkbox [disableRipple]="true" (change)="setSubCategory(j, i)" formControlName="subCatCheck"><span
+                        class="mat-body-2">{{signupCats[i].subcategories[j].subcatName}}</span></mat-checkbox>
+                    <input type="hidden" formControlName="subCatName" />
+                  </div>
+                </mat-list-item>
+              </ng-container>
+            </mat-nav-list>
+            <mat-nav-list *ngIf="fields.controls.otherField">
+              <ng-container>
+                <mat-list-item [disableRipple]="true">
+                  <div>
+                    <mat-form-field appearance="outline">
+                      <mat-label>Indique qual</mat-label>
+                      <input matInput formControlName="otherField">
+                      <mat-error *ngIf="fields.controls['otherField'].invalid">{{getOtherErrorMessage(i)}}</mat-error>
+                    </mat-form-field>
+                  </div>
+                </mat-list-item>
+              </ng-container>
+            </mat-nav-list>
+          </mat-expansion-panel>
+          <mat-divider></mat-divider>
+        </mat-accordion>
+        <mat-error *ngIf="showCatError">
+          <span>Categoria obrigatório.</span>
+        </mat-error>
+        <div class="field-info" fxLayoutAlign="start">
+          <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+            <mat-icon>arrow_left</mat-icon>
+            <span>Selecione pelo menos uma categoria. Mais tarde poderá gerir esta informação na área de Perfil da Empresa.</span>
+          </p>
+        </div>
+      </ng-container>
+      <!-- <div fxFlexOffset="24px" fxLayout="column">
+        <span class="mat-body-2">Adicione uma pequena descrição acerca da empresa.</span>
+        <mat-form-field appearance="outline">
+          <textarea matInput placeholder="Escrever aqui um comentário…" formControlName="description"></textarea>
+          <mat-label>Escrever aqui um comentário…</mat-label>
+        </mat-form-field>
+        <div class="field-info" fxLayoutAlign="start start">
+          <p class="mat-caption field-info-text" fxLayoutAlign="start start" fxHide.xs="true" fxHide.sm="true">
+            <mat-icon>arrow_left</mat-icon>
+            <span>Uma pequena descrição da sua empresa ajuda-nos a melhor catalogarmos o seu negócio e criará uma maior empatia com potenciais clientes.</span>
+          </p>
+        </div>
+      </div> -->
+      <div fxFlexOffset="48px">
+        <div fxFlex="50" fxLayoutAlign="start">
+          <button mat-button color="primary" type="button" (click)="navigateBackToNifForm()" [disabled]="isLoading">
+            <mat-icon aria-label="navigate Back with an arrow icon">arrow_back</mat-icon>
+            Voltar
+          </button>
+        </div>
+        <div fxFlex="50" fxLayoutAlign="end">
+          <button *ngIf="!isLoading"   mat-flat-button color="primary" type="submit" [disabled]="!selectedCats || !categoryFields.valid || isLoading">
+            Concluir
+          </button>
+          <div *ngIf="isLoading" fxLayoutAlign="end" class="spinner">
+            <mat-progress-spinner mode="indeterminate" [diameter]="30"></mat-progress-spinner>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+  </form>
+</div>

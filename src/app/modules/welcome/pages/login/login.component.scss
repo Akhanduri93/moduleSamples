@@ -1,0 +1,26 @@
+.add-padding {
+  padding-top: 0.5rem;
+  width: 100%;
+}
+
+.isMobile {
+  mat-card {
+    border-style: none;
+  }
+}
+
+.stretch {
+  width: 100%;
+}
+
+.terms-mobile {
+  padding-top: 1rem;
+}
+
+mat-icon {
+  cursor: pointer;
+}
+
+.compress {
+  padding-top: 8px !important;
+}

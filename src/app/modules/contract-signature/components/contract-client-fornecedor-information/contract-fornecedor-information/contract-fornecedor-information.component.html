@@ -1,0 +1,24 @@
+<div fxLayout="column">
+    <div fxFlexOffset="2rem" fxFlexOffset.xs="1.5rem">
+        <div fxLayout fxLayout.xs="column" fxLayoutGap="1rem">
+            <div class="logo">
+                <svg width="57px" height="57px">
+        <use xlink:href="assets/images/img-parceiro-default.svg#Dashboard-client"></use>
+      </svg>
+            </div>
+            <div fxLayout="column">
+                <h2>{{providerInfo?.name}}</h2>
+                <div fxLayout="column" fxLayoutGap="1.5rem">
+                    <div fxLayout="column" fxLayoutGap="0.5rem">
+                        <mat-label class="mat-caption">NIF/NIPC</mat-label>
+                        <h3>{{providerInfo?.nif}}</h3>
+                    </div>
+                    <div>
+                        <p class="mat-caption">Morada do Fornecedor</p>
+                        <h3 class="mat-subheading-2">{{providerInfo?.street}} {{providerInfo?.num}} {{providerInfo?.floor}}<br> {{providerInfo?.postalCode}} {{providerInfo?.city}} <br>{{providerInfo?.country}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

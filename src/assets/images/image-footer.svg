@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1212px" height="780px" viewBox="0 0 1212 780" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1,0 L1208,0 C1208.55228,-1.01453063e-16 1209,0.44771525 1209,1 L1209,161 C1209,161.552285 1208.55228,162 1208,162 L1,162 C0.44771525,162 6.76353751e-17,161.552285 0,161 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="path-1"></path>
+        <path d="M1,0 L1208,-2.22044605e-16 C1208.55228,-3.23497668e-16 1209,0.44771525 1209,1 L1209,508 C1209,508.552285 1208.55228,509 1208,509 L1,509 C0.44771525,509 6.76353751e-17,508.552285 0,508 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="path-3"></path>
+        <rect id="path-5" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-7" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-9" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-11" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-13" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-15" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-17" x="0" y="0" width="1209" height="1"></rect>
+        <rect id="path-19" x="0" y="0" width="378" height="14"></rect>
+        <path d="M1,0 L159,0 C159.552285,-1.01453063e-16 160,0.44771525 160,1 L160,39 C160,39.5522847 159.552285,40 159,40 L1,40 C0.44771525,40 6.76353751e-17,39.5522847 0,39 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="path-21"></path>
+        <filter x="-4.4%" y="-10.0%" width="108.8%" height="137.5%" filterUnits="objectBoundingBox" id="filter-23">
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="1.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.2 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMorphology radius="0.5" operator="erode" in="SourceAlpha" result="shadowSpreadOuter2"></feMorphology>
+            <feOffset dx="0" dy="2" in="shadowSpreadOuter2" result="shadowOffsetOuter2"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter2" result="shadowBlurOuter2"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.12 0" type="matrix" in="shadowBlurOuter2" result="shadowMatrixOuter2"></feColorMatrix>
+            <feOffset dx="0" dy="1" in="SourceAlpha" result="shadowOffsetOuter3"></feOffset>
+            <feGaussianBlur stdDeviation="0.5" in="shadowOffsetOuter3" result="shadowBlurOuter3"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.14 0" type="matrix" in="shadowBlurOuter3" result="shadowMatrixOuter3"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter2"></feMergeNode>
+                <feMergeNode in="shadowMatrixOuter3"></feMergeNode>
+            </feMerge>
+        </filter>
+        <rect id="path-24" x="0" y="0" width="112" height="1"></rect>
+    </defs>
+    <g id="Centro-Resoluções" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Centro-de-resolução" transform="translate(-353.000000, -135.000000)">
+            <g id="Group-5" transform="translate(354.000000, 136.000000)">
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="726" y="581" width="74" height="62"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="726" y="520" width="74" height="62"></rect>
+                <g id="MLA">
+                    <g id="Cards-/-Elements-/-Surface-/-Outlined-/-Resting">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <path stroke-opacity="0.12" stroke="#03363E" stroke-width="1" d="M1,-0.5 L1208,-0.5 C1208.82843,-0.5 1209.5,0.171572875 1209.5,1 L1209.5,161 C1209.5,161.828427 1208.82843,162.5 1208,162.5 L1,162.5 C0.171572875,162.5 -0.5,161.828427 -0.5,161 L-0.5,1 C-0.5,0.171572875 0.171572875,-0.5 1,-0.5 Z"></path>
+                        <g id="✱-/-Color-/-Surface-/-Main" mask="url(#mask-2)" fill="#FFFFFF" fill-rule="evenodd">
+                            <g id="✱-/-Color-/-Surface-/-Base">
+                                <rect id="Rectangle-13" x="0" y="0" width="1209" height="162"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <text id="Casos-Reportados" font-family="Roboto-Medium, Roboto" font-size="20" font-weight="400" line-spacing="26" fill="#03363E" fill-opacity="0.87">
+                    <tspan x="0" y="231">Casos Reportados</tspan>
+                </text>
+                <g id="outline-more_vert-24px" transform="translate(751.000000, 539.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline_1_" transform="translate(10.000000, 4.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <path d="M2,4 C3.1,4 4,3.1 4,2 C4,0.9 3.1,0 2,0 C0.9,0 0,0.9 0,2 C0,3.1 0.9,4 2,4 Z M2,6 C0.9,6 0,6.9 0,8 C0,9.1 0.9,10 2,10 C3.1,10 4,9.1 4,8 C4,6.9 3.1,6 2,6 Z M2,12 C0.9,12 0,12.9 0,14 C0,15.1 0.9,16 2,16 C3.1,16 4,15.1 4,14 C4,12.9 3.1,12 2,12 Z" id="Shape"></path>
+                    </g>
+                </g>
+                <g id="outline-more_vert-24px" transform="translate(751.000000, 600.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline_1_" transform="translate(10.000000, 4.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <path d="M2,4 C3.1,4 4,3.1 4,2 C4,0.9 3.1,0 2,0 C0.9,0 0,0.9 0,2 C0,3.1 0.9,4 2,4 Z M2,6 C0.9,6 0,6.9 0,8 C0,9.1 0.9,10 2,10 C3.1,10 4,9.1 4,8 C4,6.9 3.1,6 2,6 Z M2,12 C0.9,12 0,12.9 0,14 C0,15.1 0.9,16 2,16 C3.1,16 4,15.1 4,14 C4,12.9 3.1,12 2,12 Z" id="Shape"></path>
+                    </g>
+                </g>
+                <g id="Cards-/-Elements-/-Surface-/-Outlined-/-Resting" transform="translate(1.000000, 269.000000)">
+                    <mask id="mask-4" fill="white">
+                        <use xlink:href="#path-3"></use>
+                    </mask>
+                    <path stroke-opacity="0.12" stroke="#03363E" stroke-width="1" d="M1,-0.5 L1208,-0.5 C1208.82843,-0.5 1209.5,0.171572875 1209.5,1 L1209.5,508 C1209.5,508.828427 1208.82843,509.5 1208,509.5 L1,509.5 C0.171572875,509.5 -0.5,508.828427 -0.5,508 L-0.5,1 C-0.5,0.171572875 0.171572875,-0.5 1,-0.5 Z"></path>
+                    <g id="✱-/-Color-/-Surface-/-Main" mask="url(#mask-4)" fill="#FFFFFF" fill-rule="evenodd">
+                        <g id="✱-/-Color-/-Surface-/-Base">
+                            <rect id="Rectangle-13" x="0" y="0" width="1209" height="509"></rect>
+                        </g>
+                    </g>
+                </g>
+                <text id="19-Out-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="431.792105">19 Out 17</tspan>
+                </text>
+                <text id="CASO-Nº" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20" fill="#03363E">
+                    <tspan x="33" y="307">CASO Nº</tspan>
+                </text>
+                <text id="CATEGORIA" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20" fill="#03363E">
+                    <tspan x="205.410729" y="306.956579">CATEGORIA</tspan>
+                </text>
+                <text id="DATA" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20" fill="#03363E">
+                    <tspan x="870.596815" y="306.956579">DATA</tspan>
+                </text>
+                <text id="ESTADO" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20" fill="#03363E">
+                    <tspan x="1002" y="307">ESTADO</tspan>
+                </text>
+                <text id="00017112" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="368">00017112</tspan>
+                </text>
+                <text id="00017313" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="431">00017313</tspan>
+                </text>
+                <text id="00019812" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="494">00019812</tspan>
+                </text>
+                <text id="00017112" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="556">00017112</tspan>
+                </text>
+                <text id="00017112" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="618.252632">00017112</tspan>
+                </text>
+                <text id="00017112" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="33" y="680">00017112</tspan>
+                </text>
+                <text id="28-Out-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="367.876316">28 Out 17</tspan>
+                </text>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 330.918421)">
+                    <mask id="mask-6" fill="white">
+                        <use xlink:href="#path-5"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-6)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 394.000000)">
+                    <mask id="mask-8" fill="white">
+                        <use xlink:href="#path-7"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-8)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 457.000000)">
+                    <mask id="mask-10" fill="white">
+                        <use xlink:href="#path-9"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-10)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 520.000000)">
+                    <mask id="mask-12" fill="white">
+                        <use xlink:href="#path-11"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-12)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <polygon id="Shape" points="313.130763 483.717105 329.345348 483.717105 329.345348 499.696053 313.130763 499.696053"></polygon>
+                <text id="02-Set-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="493.710526">02 Set 17</tspan>
+                </text>
+                <text id="02-Set-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="557.626316">02 Set 17</tspan>
+                </text>
+                <text id="19-Out-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="681.463158">19 Out 17</tspan>
+                </text>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="645" width="74.992456" height="61.9184211"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="582" width="74.992456" height="61.9184211"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="521" width="74.992456" height="61.9184211"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="458" width="73.9790444" height="61.9184211"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="395" width="74.992456" height="61.9184211"></rect>
+                <rect id="Rectangle-2" fill-opacity="0.02" fill="#1976D2" x="1135" y="332" width="73.9790444" height="61.9184211"></rect>
+                <text id="28-Out-17" font-family="Roboto-Regular, Roboto" font-size="14" font-weight="normal" line-spacing="20" fill="#03363E" fill-opacity="0.8">
+                    <tspan x="870.596815" y="617.547368">28 Out 17</tspan>
+                </text>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 582.000000)">
+                    <mask id="mask-14" fill="white">
+                        <use xlink:href="#path-13"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-14)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 644.000000)">
+                    <mask id="mask-16" fill="white">
+                        <use xlink:href="#path-15"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-16)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(1.000000, 706.000000)">
+                    <mask id="mask-18" fill="white">
+                        <use xlink:href="#path-17"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-18)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="1209" height="1"></rect>
+                    </g>
+                </g>
+                <polygon id="Shape" points="313.130763 733.388158 329.345348 733.388158 329.345348 749.367105 313.130763 749.367105"></polygon>
+                <image id="Screen-Shot-2018-06-15-at-15.29.14" x="776.975692" y="716.082895" width="417.525566" height="53.9289474" xlink:href="data:image/png;base64,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"></image>
+                <g id="Divider-/-Dark" transform="translate(1127.715344, 520.143005) rotate(-90.000000) translate(-1127.715344, -520.143005) translate(938.858348, 513.059671)">
+                    <mask id="mask-20" fill="white">
+                        <use xlink:href="#path-19"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-20)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <g transform="translate(0.000000, 13.000000)" id="Rectangle-3">
+                            <rect x="0" y="0" width="378" height="1"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Group-14" transform="translate(205.410729, 353.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Plano-de-pagamentos">
+                        <tspan x="0" y="15">Plano de pagamentos para valor em divida</tspan>
+                    </text>
+                </g>
+                <g id="Group-14" transform="translate(205.410729, 416.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Alteração-NIF-empres">
+                        <tspan x="0" y="15">Alteração NIF empresa</tspan>
+                    </text>
+                </g>
+                <g id="Group-14" transform="translate(205.410729, 483.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Participação-de-furt">
+                        <tspan x="0" y="15">Participação de furto</tspan>
+                    </text>
+                </g>
+                <g id="Group-14" transform="translate(205.410729, 603.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Reportação-de-burla">
+                        <tspan x="0" y="15">Reportação de burla</tspan>
+                    </text>
+                </g>
+                <g id="Group-14" transform="translate(205.410729, 663.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Bug-de-plataforma">
+                        <tspan x="0" y="15">Bug de plataforma</tspan>
+                    </text>
+                </g>
+                <text id="Centro-de-Resoluções" font-family="Roboto-Regular, Roboto" font-size="24" font-weight="normal" line-spacing="30" fill="#03363E">
+                    <tspan x="32" y="57">Centro de Ajuda</tspan>
+                </text>
+                <text id="Garantimos-uma-respo" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#03363E" fill-opacity="0.7">
+                    <tspan x="32" y="103">Garantimos uma resposta em 15 minutos. Caso não encontre o que procura, ou queira contactar um dos </tspan>
+                    <tspan x="32" y="125">nossos operadores para resolução de um problema, poderá fazê-lo aqui.</tspan>
+                </text>
+                <text id="Novo" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#2FCC71">
+                    <tspan x="1002" y="369">Novo</tspan>
+                </text>
+                <text id="Novo" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#2FCC71">
+                    <tspan x="1002" y="432">Novo</tspan>
+                </text>
+                <text id="Aberto" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#03363E" fill-opacity="0.7">
+                    <tspan x="1002" y="495">Aberto</tspan>
+                </text>
+                <text id="Em-analise" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#03363E" fill-opacity="0.7">
+                    <tspan x="1002" y="557">Em analise</tspan>
+                </text>
+                <text id="Resolvido" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#03363E" fill-opacity="0.7">
+                    <tspan x="1002" y="619">Resolvido</tspan>
+                </text>
+                <text id="Fechado" font-family="Roboto-Regular, Roboto" font-size="16" font-weight="normal" line-spacing="22" fill="#03363E" fill-opacity="0.7">
+                    <tspan x="1002" y="681">Fechado</tspan>
+                </text>
+                <g id="Group-14" transform="translate(205.410729, 541.000000)" fill="#1D4B52" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" line-spacing="20">
+                    <text id="Alteração-de-dia-de">
+                        <tspan x="0" y="15">Alteração de dia de débito</tspan>
+                    </text>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 540.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 477.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 414.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 351.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 601.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="outline-keyboard_arrow_right-24px" transform="translate(1160.000000, 664.000000)">
+                    <g id="Bounding_Boxes">
+                        <polygon id="Shape" points="0 0 24 0 24 24 0 24"></polygon>
+                    </g>
+                    <g id="Outline" transform="translate(8.000000, 6.000000)" fill="#34BDCE" fill-rule="nonzero">
+                        <polygon id="Shape" points="0.59 10.59 5.17 6 0.59 1.41 2 0 8 6 2 12"></polygon>
+                    </g>
+                </g>
+                <g id="Buttons-/-Contained-/-Enabled" transform="translate(1017.000000, 61.000000)">
+                    <mask id="mask-22" fill="white">
+                        <use xlink:href="#path-21"></use>
+                    </mask>
+                    <g id="Surface">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-23)" xlink:href="#path-21"></use>
+                        <use fill="#FAFAFA" fill-rule="evenodd" xlink:href="#path-21"></use>
+                    </g>
+                    <g id="✱-/-Color-/-Primary-/-Main" mask="url(#mask-22)" fill="#00ACC1" fill-rule="evenodd">
+                        <g id="✱-/-Color-/-Primary-/-600">
+                            <rect id="Rectangle-13" x="0" y="0" width="160" height="40"></rect>
+                        </g>
+                    </g>
+                    <g id="✱-/-Text-/-Button-/-Selected-/-On-Primary-/-High-Emphasis-/-Center" mask="url(#mask-22)" font-family="Roboto-Medium, Roboto" font-size="14" font-weight="400" letter-spacing="1.25" line-spacing="16">
+                        <g transform="translate(16.000000, 12.000000)" id="Button-Text">
+                            <text>
+                                <tspan x="0" y="15" fill="#FBFBFB">REPORTAR CASO</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+                <g id="Divider-/-Dark" transform="translate(985.000000, 81.500000) rotate(-90.000000) translate(-985.000000, -81.500000) translate(929.000000, 81.000000)">
+                    <mask id="mask-25" fill="white">
+                        <use xlink:href="#path-24"></use>
+                    </mask>
+                    <g id="Surface"></g>
+                    <g id="✱-/-Color-/-Icons-/-Selected-/-On-Surface-/-Active" opacity="0.12" mask="url(#mask-25)" fill="#03363E" fill-opacity="0.87" fill-rule="evenodd">
+                        <rect id="Rectangle-3" x="0" y="0" width="112" height="1"></rect>
+                    </g>
+                </g>
+                <path d="M984.75,29.5 L984.75,140.5" id="Line-2" stroke="#D9D9D9" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>

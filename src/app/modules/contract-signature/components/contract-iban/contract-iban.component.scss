@@ -1,0 +1,44 @@
+.card {
+    padding-top: 1rem !important;
+    .caption-label {
+        margin-bottom: 0px;
+    }
+    .label-value {
+        white-space: initial;
+        word-break: break-all;
+    }
+    .mat-icon-button {
+        top: -15px;
+        left: -5px;
+    }
+    .mat-icon {
+        color: #00acc1;
+        font-size: 24px;
+        cursor: pointer;
+        height: 24px;
+        width: 24px;
+        position: relative;
+    }
+     ::ng-deep .mat-checkbox-inner-container {
+        margin-top: 0px !important;
+    }
+    @media(max-width: 599px) {
+         ::ng-deep .mat-checkbox-inner-container {
+            margin-top: 4px !important;
+        }
+        .mat-icon-button {
+            left: 18px;
+        }
+    }
+    @media(max-width: 959px) {
+        margin-bottom: 0.5rem !important;
+    }
+}
+
+@media(max-width: 599px) {
+    padding-top: 24px !important;
+}
+
+.condition {
+    margin-bottom: 0.5rem;
+}

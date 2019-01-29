@@ -1,0 +1,21 @@
+<div class="signature" fxLayout="column">
+    <mat-toolbar class="top" fxLayout="row">
+        <a href="https://liqui.do">
+            <svg width="348px" viewBox="0 0 348 70" class="logo">
+        <use xlink:href="assets/images/logo/logo.svg#logo"></use>
+      </svg>
+        </a>
+        <a class="mat-body-1 link-color" [routerLink]="['/portal/support/knowledge-base/help-center']">
+            <mat-icon>help_outline</mat-icon> CENTRO DE AJUDA</a>
+    </mat-toolbar>
+    <div [ngClass]="!(isHandset | async)!.matches ? '' : 'mobile'">
+        <mat-divider class="divider-padding" fxFlex.sm=100 fxFlex.xs=100></mat-divider>
+    </div>
+    <main class="main-content" role="main" fxLayout="column" fxLayoutAlign="start center">
+        <div class="template">
+            <div [ngClass]="!(isHandset | async)!.matches ? 'container' : 'container-mobile'">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </main>
+</div>

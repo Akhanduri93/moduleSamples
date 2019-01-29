@@ -1,0 +1,41 @@
+.payment-info {
+  border-left: 3px solid #d0021b;
+
+  .payment-delayed {
+    color: #d4152c !important;
+    margin-right: 0.5rem;
+  }
+
+  h4 {
+    color: #03363e;
+    margin-bottom: 0 !important;
+  }
+
+  .mat-caption-no-margin {
+    margin-bottom: 0 !important;
+  }
+
+  h2 {
+    color: rgba(3, 54, 62, 0.87);
+    margin-bottom: 0 !important;
+  }
+
+  .mat-body-2 {
+    margin-bottom: 0 !important;
+    color: rgba(3, 54, 62, 0.8);
+  }
+
+  mat-card-content {
+    margin-top: 1.06rem !important;
+  }
+}
+
+.payment-details {
+  border: none !important;
+  padding: 1.25rem 1rem 0.93rem 0.625rem !important;
+  background: #f3f7fa;
+}
+
+.margin-divider-top {
+  margin-top: 2rem;
+}

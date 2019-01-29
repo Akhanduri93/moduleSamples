@@ -1,0 +1,95 @@
+<div *ngIf="contractSignature">
+    <div fxLayout [ngClass]="!(isMobile | async)!.matches ? '' : 'is-mobile'" fxLayoutGap="1.5rem">
+        <div fxLayout="column" fxFlex="6 6 calc(6*100%/12 - 24px)" fxLayoutGap="0.5rem" fxLayoutGap.lt-sm="0rem">
+            <h2>Liqui.do S.A.</h2>
+            <p fxHide.lt-sm class="mat-body">Rua Mar da China, 1, Esc 2.2</p>
+            <p fxHide.lt-sm class="mat-body">1990-137 Lisboa, Portugal</p>
+            <p fxHide.lt-sm class="mat-body-2 address">NIPC 513 626 930</p>
+            <p fxShow.lt-sm fxHide.gt-xs class="mat-caption address">NIPC 513 626 930</p>
+        </div>
+        <div fxLayout="column" fxFlex="6 6 calc(6*100%/12 - 24px)" fxLayoutAlign="start end">
+            <p fxHide.lt-sm class="mat-body">Contrato de locação / Master Lease Agreement</p>
+            <div [ngClass]="!(isMobile | async)!.matches ? 'contract-number-space' : ''" fxLayout="column">
+                <mat-label class="mat-caption">Contrato nº</mat-label>
+                <h3>{{contractSignature?.application?.name}}</h3>
+            </div>
+        </div>
+    </div>
+    <div fxLayout="column" fxLayoutGap="1rem">
+        <mat-vertical-stepper linear #stepper (selectionChange)="onSelectionChange($event)">
+            <mat-step [completed]="!isFormInvalid" label="Dados Pessoais">
+                <app-contract-signature-form [docRecipientId]="docRecipientId" [declinedReasons]="contractSignature?.declinedReasons" [personalGuarantee]="contractSignature?.personalGuarantee" [signer]="contractSignature?.signer" [accepted]="accepted"></app-contract-signature-form>
+                <div class="stepper-button">
+                    <button [disabled]="isFormInvalid" mat-stroked-button color="primary" matStepperNext>Próximo</button>
+                </div>
+            </mat-step>
+
+            <mat-step label="Dados da minha Empresa">
+                <app-contract-client-information [clientInfo]="contractSignature?.client" [contractID]="contractSignature?.application?.id" [docRecipientId]="docRecipientId" [token]="token">
+                </app-contract-client-information>
+                <div class="stepper-button" fxLayoutGap="0.25rem">
+                    <button mat-button color="primary" matStepperPrevious>Anterior</button>
+                    <button mat-stroked-button color="primary" matStepperNext>Próximo</button>
+                </div>
+            </mat-step>
+            <mat-step label="Dados do Fornecedor">
+                <app-contract-fornecedor-information [providerInfo]="contractSignature?.vendor"></app-contract-fornecedor-information>
+                <div class="stepper-button" fxLayoutGap="0.25rem">
+                    <button mat-button color="primary" matStepperPrevious>Anterior</button>
+                    <button mat-stroked-button color="primary" matStepperNext>Próximo</button>
+                </div>
+            </mat-step>
+            <mat-step [completed]="ibanDeclaration" label="Confirmação de IBAN para pagamento">
+                <app-contract-iban [ibanInfo]="contractSignature?.client?.iban" [clientId]="contractSignature?.client?.id" [applicationPaymentMethod]="contractSignature?.application?.paymentMethod" [docRecipientId]="docRecipientId" [token]="token"></app-contract-iban>
+                <div class="stepper-button" fxLayoutGap="0.25rem">
+                    <button mat-button color="primary" matStepperPrevious>Anterior</button>
+                    <button mat-stroked-button color="primary" matStepperNext>Próximo</button>
+                </div>
+            </mat-step>
+            <mat-step label="Opções de Contrato">
+                <app-application-values [contract]="contractSignature?.application" [rents]="contractSignature?.rents" [signature]="true" [clientId]="contractSignature?.client?.id" [applicationId]="contractSignature?.application?.id" [iban]="contractSignature?.client?.iban"
+                    [token]="token" [docRecipientId]="docRecipientId">
+                </app-application-values>
+                <div class="stepper-button" fxLayoutGap="0.25rem">
+                    <button mat-button color="primary" matStepperPrevious>Anterior</button>
+                    <button mat-stroked-button color="primary" matStepperNext>Próximo</button>
+                </div>
+            </mat-step>
+            <mat-step label="Cláusulas Contratuais e Assinatura">
+                <app-contract-clauses></app-contract-clauses>
+                <div class="stepper-button">
+                    <button mat-button color="primary" matStepperPrevious>Anterior</button>
+                </div>
+            </mat-step>
+        </mat-vertical-stepper>
+
+        <mat-card class="mat-elevation-z0 card-space" *ngIf="signedInfo?.name" fxLayout="column">
+            <h3>Assinatura Digital</h3>
+            <div fxFlexOffset="1rem">
+                <mat-divider></mat-divider>
+            </div>
+            <div fxFlexOffset="1rem">
+                <app-contract-signed-information [signedInfo]="signedInfo"></app-contract-signed-information>
+            </div>
+        </mat-card>
+
+        <mat-card class="mat-elevation-z0" *ngIf="!signedInfo?.name">
+            <mat-card-content fxLayout="column" fxLayoutGap="1.5rem">
+                <mat-checkbox (change)="declaration = !declaration"><span class="mat-body-2 break-text">
+            Declaro que li e aceito os termos e condições do Acordo Geral de Locação, Declaração de Fiança e as <a href="javascript:void(0)"
+              (click)="openInsuranceDialog()">Condições gerais de seguro</a> e que assino o presente contrato em
+            representação da locatária, com os necessários poderes para o ato.
+          </span>
+                </mat-checkbox>
+                <div class="signature-buttons" *ngIf="!reason" fxLayout fxLayoutGap="5px" fxLayout.xs="column" fxLayoutGap.xs="1rem">
+                    <button mat-flat-button type="button" id="submit" (click)="addClause()" [disabled]="isFormInvalid || !declaration || !ibanDeclaration || isLoading || disableAcceptButton">Aceitar</button>
+                    <button mat-button type="button" color="primary" id="cancel" [disabled]="isLoading" (click)="openCancellationDialog()">Declinar</button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+<div *ngIf="!contractSignature" fxLayout="row" fxLayoutGap="8px">
+    <mat-icon fxLayoutAlign="start center">error_outline</mat-icon>
+    <span fxLayoutAlign="start center">A carregar Contrato</span>
+</div>

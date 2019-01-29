@@ -1,0 +1,43 @@
+<div>
+  <form fxLayout="column" (ngSubmit)="userSignup(userSignupForm)" [formGroup]="userSignupForm">
+    <mat-card-content fxLayout="column">
+      <mat-form-field appearance="outline">
+        <mat-label>Nome Completo</mat-label>
+        <input matInput formControlName="nomeconta" required>
+        <mat-error *ngIf="userSignupForm.controls['nomeconta'].invalid" innerHTML="{{getNameErrorMessage()}}"></mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Telemóvel</mat-label>
+        <input matInput formControlName="tele" required>
+        <mat-error *ngIf="userSignupForm.controls['tele'].invalid">{{getTelephoneErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required (change)="checkIfExists()">
+        <mat-icon *ngIf="enableSubmit" class="verified" matSuffix>check</mat-icon>
+        <mat-progress-spinner *ngIf="emailVerification" matSuffix mode="indeterminate" [diameter]="20"></mat-progress-spinner>
+        <mat-error *ngIf="userSignupForm.controls['email'].invalid" [innerHTML]="getEmailErrorMessage()"></mat-error>
+      </mat-form-field>
+      <!-- <mat-form-field appearance="outline" fxFlexOffset="16px">
+        <mat-label>Criar palavra-passe</mat-label>
+        <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required autocomplete="new-password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="getEmptyPasswordError(0)">{{getEmptyPasswordError(1)}}</mat-error>
+        <mat-error *ngIf="getInvalidCharactersPasswordError(0)">{{getInvalidCharactersPasswordError(1)}}</mat-error>
+        <mat-error *ngIf="getMinLenghtPasswordError(0)">{{getMinLenghtPasswordError(1)}}</mat-error>
+        <mat-error *ngIf="getMaxLenghtPasswordError(0)">{{getMaxLenghtPasswordError(1)}}</mat-error>
+      </mat-form-field> -->
+      <div fxFlexOffset="32px" class="mat-caption">Ao criar uma conta, concorda com os <a href='https://liqui.do/termos-e-condicoes/'>Termos
+          e Condições</a> e <a href='https://liqui.do/politica-de-privacidade/'>Política de Privacidade</a>
+        da Liqui.do, S.A.</div>
+      <div fxFlexOffset="16px" fxLayout="row" fxLayout.xs="column" fxLayoutGap="24px" fxLayoutGap.xs="16px" fxFlex="12 12 calc(12*100%/12 - 24px)"
+        fxFlex.xs="4 4 calc(4*100%/4 - 16px)">
+        <div fxLayoutAlign="end start" fxFlex="12 12 calc(12*100%/12 - 24px)" fxFlex.xs="4 4 calc(4*100%/4 - 16px)">
+          <button fxFlex="100" mat-flat-button color="primary" type="submit" [disabled]="!(enableSubmit && userSignupForm.valid)">
+            Criar conta
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </form>
+</div>

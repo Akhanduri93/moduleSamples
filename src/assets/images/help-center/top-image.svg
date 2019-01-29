@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="419px" height="417px" viewBox="0 0 419 417" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>shapes_finais_Artboard 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.00955385401%" y1="49.9936361%" x2="99.9959779%" y2="49.9936361%" id="linearGradient-1">
+            <stop stop-color="#7BD3CD" offset="0%"></stop>
+            <stop stop-color="#78D2CC" offset="1%"></stop>
+            <stop stop-color="#5DC9C2" offset="16%"></stop>
+            <stop stop-color="#48C1BA" offset="32%"></stop>
+            <stop stop-color="#39BCB4" offset="49%"></stop>
+            <stop stop-color="#30B9B1" offset="70%"></stop>
+            <stop stop-color="#2DB8B0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="help-center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Help-center-login" transform="translate(-778.000000, -145.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="shapes_finais_Artboard-2" transform="translate(983.000000, 371.000000) rotate(-59.000000) translate(-983.000000, -371.000000) translate(787.000000, 162.000000)">
+                <path d="M217.351902,0 C268.752626,3.00399261 312.475773,10.8404951 348.7816,41.1416379 C358.916392,49.6648074 367.924797,59.4525926 375.588053,70.2673053 C395.214603,95.4528223 397.436195,130.14415 381.183575,157.644308 C372.508347,173.665602 363.83312,189.643359 355.157892,205.577581 C334.930879,243.164389 324.080813,285.111383 323.536688,327.827019 C323.418158,338.724304 321.931655,349.563145 319.112322,360.087288 C311.072555,388.945615 286.942407,410.40562 257.431454,414.942805 C237.816576,419.019065 217.577646,419.019065 197.962768,414.942805 C116.372253,399.400408 51.9586882,358.389379 18.5156859,280.024354 C-10.372822,212.108 -6.46896958,143.669212 37.3843059,82.8057092 C68.0946115,39.1825123 113.3793,18.0239556 163.999252,7.31406896 C182.998001,3.26520936 203.428162,1.82851724 217.351902,0 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

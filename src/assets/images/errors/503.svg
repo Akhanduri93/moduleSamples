@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="395px" height="266px" viewBox="0 0 395 266" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 8</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Error-500" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="500-error" transform="translate(-766.000000, -452.000000)">
+            <g id="Group-7" transform="translate(745.000000, 436.000000)">
+                <g id="Group-4">
+                    <g id="Group-8">
+                        <text id="503" font-family="Roboto-Light, Roboto" font-size="250" font-weight="300" fill="#03363E" fill-opacity="0.87">
+                            <tspan x="0" y="279">503</tspan>
+                        </text>
+                        <g id="Group-2" transform="translate(22.000000, 0.000000)">
+                            <g id="Group-3">
+                                <text id="ERROR" font-family="Roboto-Light, Roboto" font-size="51" font-weight="300" fill="#03363E" fill-opacity="0.87">
+                                    <tspan x="111" y="53">ERROR</tspan>
+                                </text>
+                                <path d="M0.5,32.5 L97.5,32.5" id="Line" stroke="#224F56" stroke-width="3" stroke-linecap="square" fill-rule="nonzero"></path>
+                                <path d="M289.5,32.5 L392.5,32.5" id="Line" stroke="#224F56" stroke-width="3" stroke-linecap="square" fill-rule="nonzero"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

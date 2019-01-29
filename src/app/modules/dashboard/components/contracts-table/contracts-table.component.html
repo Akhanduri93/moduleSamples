@@ -1,0 +1,107 @@
+<mat-card class="mat-elevation-z0 contract-mat" *ngFor="let contract of contracts; let i = index;" fxLayout.xs="column"
+    fxLayout.sm="column" fxLayoutGap.sm="0.5rem" fxLayoutGap.xs="0.5rem" [ngClass]="isContractArrears(contract.contractStatus) ? 'arrears' : ''">
+  <mat-card-header fxHide.gt-xs fxLayout="column" fxFlex.xs="4 4 calc(4*100%/4 - 16px)">
+    <div fxLayout.xs="row" fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxHide.xs="{{showContracts[i]}}">
+      <div fxLayout.xs="column" fxFlex="90">
+        <div fxLayout="row" fxLayoutGap="1.0rem" class="company-info">
+          <div class="logo">
+            <svg width="57px" height="57px">
+              <use xlink:href="assets/images/img-parceiro-default.svg#Dashboard-client"></use>
+            </svg>
+          </div>
+          <div fxLayout="column">
+            <span class="mat-subheading-2">{{contract.vendorName}}</span>
+            <app-star-rating disabled="true"></app-star-rating>
+          </div>
+        </div>
+        <div fxLayout="column" fxFlexOffset="8px">
+          <div fxLayout="row" class="mat-subheading-1" fxLayoutAlign="start center">
+            <span class="mat-body-2">{{contract.rentingApplicationName}}</span>
+            <div class="check-circle">
+              <mat-icon class="running" *ngIf="isContractRunning(contract.contractStatus)">check_circle_outline</mat-icon>
+              <mat-icon class="in-arrears" *ngIf="isContractArrears(contract.contractStatus)">error_outline</mat-icon>
+              <mat-icon class="completed" *ngIf="isContractCompleted(contract.contractStatus)">done_all</mat-icon>
+              <mat-icon class="canceled" *ngIf="isContractCanceled(contract.contractStatus)">cancel</mat-icon>
+            </div>
+            <span class="mat-body-2">{{ getContractStatus(contract.contractStatus) }}</span>
+          </div>
+        </div>
+      </div>
+      <div fxFlex="10" fxLayoutAlign="end center">
+        <mat-icon class="arrow" fxHide.gt-xs (click)="showContracts[i]=true;">keyboard_arrow_down</mat-icon>
+      </div>
+    </div>
+
+    <div fxLayout.xs="row" fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxShow.xs="{{showContracts[i]}}">
+      <div fxLayout.xs="column" fxFlex="90" fxLayoutAlign="start">
+        <div fxLayout="column">
+          <span class="mat-subheading-2" fxLayoutAlign="start center">{{contract.rentingApplicationName}}</span>
+        </div>
+      </div>
+      <div fxLayout.xs="column" fxLayoutAlign="start center"  fxFlex="10">
+        <mat-icon class="arrow" fxHide.gt-xs (click)="showContracts[i]=false;">keyboard_arrow_up</mat-icon>
+      </div>
+    </div>
+
+    <div fxLayout.xs="column" fxShow.xs="{{showContracts[i]}}">
+      <mat-divider></mat-divider>
+    </div>
+  </mat-card-header>
+  <mat-card-content fxShow.xs="{{showContracts[i]}}" fxFlexOffset.xs="16px" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap.sm="0.5rem" fxLayoutGap.xs="0.5rem" xFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex.sm="8 8 calc(8*100%/12 - 16px)" fxFlex.md="5 5 calc(5*100%/12 - 24px)" fxFlex="5 5 calc(5*100%/12 - 24px)">
+    <div fxLayout="row" fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex.sm="8 8 calc(8*100%/12 - 16px)" fxFlex.md="5 5 calc(5*100%/12 - 24px)" fxFlex="5 5 calc(5*100%/12 - 24px)">
+      <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="1.0rem">
+        <div fxLayout="row" fxLayoutGap="1.0rem" class="company-info">
+          <div class="logo">
+            <svg width="57px" height="57px">
+              <use xlink:href="assets/images/img-parceiro-default.svg#Dashboard-client"></use>
+            </svg>
+          </div>
+          <div fxLayout="column">
+            <span class="mat-subheading-2">{{contract.vendorName}}</span>
+            <app-star-rating disabled="true"></app-star-rating>
+          </div>
+        </div>
+        <div fxLayout="column">
+          <div fxLayout="row" class="mat-subheading-1" fxLayoutAlign="start center">
+            <span class="mat-body-2">{{contract.rentingApplicationName}}</span>
+            <div class="check-circle">
+              <mat-icon class="running" *ngIf="isContractRunning(contract.contractStatus)">check_circle_outline</mat-icon>
+              <mat-icon class="in-arrears" *ngIf="isContractArrears(contract.contractStatus)">error_outline</mat-icon>
+              <mat-icon class="completed" *ngIf="isContractCompleted(contract.contractStatus)">done_all</mat-icon>
+              <mat-icon class="canceled" *ngIf="isContractCanceled(contract.contractStatus)">cancel</mat-icon>
+            </div>
+            <span class="mat-body-2">{{ getContractStatus(contract.contractStatus) }}</span>
+          </div>
+          <div>
+            <p class="mat-body-1 no-margin">{{contract.paymentAmmount | currencyFormat}}</p>
+            <p class="mat-caption">{{contract.contractDuration}}M/{{getPaymentFrequency(contract.paymentFrequency)}}</p>
+          </div>
+          <div>
+            <span class="mat-body-2">Ref. Multibanco</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row" fxFlex.xs="4 4 calc(4*100%/4 - 16px)" fxFlex.sm="8 8 calc(8*100%/8 - 16px)" fxFlex.md="5 5 calc(5*100%/12 - 24px)" fxFlex="5 5 calc(5*100%/12 - 24px)"
+      fxLayoutGap="24px">
+      <mat-divider fxHide.lt-md fxFlex=0.1 [vertical]="true" [inset]="true" class="divider-margin"></mat-divider>
+      <div fxLayout="column" class="buttons" fxFlex.gt-sm="5 5 calc(5*100%/12 - 24px)" fxLayoutGap="0.5rem">
+        <button type="button" mat-stroked-button color="primary" [routerLink]="['/portal/dashboard/contracts', contract.rentingApplicationId]">ver
+          detalhe</button>
+        <div fxFlex fxHide.lt-md></div>
+        <button type="button" mat-stroked-button color="primary" [disabled]="true">Contactar Fornecedor</button>
+        <button type="button" mat-stroked-button color="primary" [disabled]="true">Gerir seguro</button>
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<div *ngIf="contracts && contracts.length === 0" fxLayout="row" fxLayoutGap="8px" class="warn-message">
+  <mat-icon fxLayoutAlign="start center">error_outline</mat-icon>
+  <span fxLayoutAlign="start center">Aguardamos o seu primeiro contrato.</span>
+</div>
+
+<div *ngIf="!contracts && loadingValue === 100" fxLayout="row" fxLayoutGap="8px" class="warn-message">
+  <mat-icon fxLayoutAlign="start center">error_outline</mat-icon>
+  <span fxLayoutAlign="start center">Existiu um erro ao carregar os contratos. Tente mais tarde.</span>
+</div>

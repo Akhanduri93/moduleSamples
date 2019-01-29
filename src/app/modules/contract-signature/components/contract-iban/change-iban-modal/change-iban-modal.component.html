@@ -1,0 +1,39 @@
+<h3 mat-dialog-header>Alterar IBAN</h3>
+<mat-divider></mat-divider>
+<form [formGroup]="ibanForm" (ngSubmit)="updateIban(ibanForm)">
+    <mat-dialog-content>
+        <div fxLayout="column">
+            <mat-expansion-panel class="mat-elevation-z0">
+                <mat-expansion-panel-header [ngClass]="{'escohlerCheckbox': !select}">
+                    <mat-panel-description class="mat-body-1">
+                        <mat-checkbox formControlName="escolherChecked" [checked]="select" (change)="select=!select;select? onEscolherChange(ibanForm) : ibanForm.value.selectedOption = ''">Escolher IBAN
+                        </mat-checkbox>
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+            </mat-expansion-panel>
+            <ul *ngIf="select" [ngClass]="{'hide-options': hideOptions}">
+                <li *ngFor="let option of options" (click)="ibanForm.value.selectedOption = option; hideOptions=true">
+                    {{option}}
+                </li>
+            </ul>
+        </div>
+        <div fxLayout="column" fxLayoutGap="24px">
+            <mat-checkbox formControlName="novoChecked" [checked]="showNovoIban" (change)="showNovoIban=!showNovoIban;showNovoIban? onNovoIBANChange(ibanForm): ibanForm.value.iban = ''; ibanForm.value.description = ''">Novo IBAN
+            </mat-checkbox>
+            <div *ngIf="showNovoIban" fxLayout="column">
+                <mat-form-field appearance="outline">
+                    <mat-label>IBAN</mat-label>
+                    <input matInput formControlName="iban" [type]="hide ? 'text' : 'password'" required>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                    <mat-error *ngIf="ibanForm.controls['iban'].invalid">
+                        <span *ngIf="ibanForm.controls['iban'].errors.required">IBAN é obrigatório.</span>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions fxLayout fxLayoutGap="4px" fxLayoutAlign="end" fxLayoutAlign.xs="center">
+        <button mat-button type="button" color="primary" (click)="closeModal()" href="javascript:void(0);">Cancelar</button>
+        <button mat-flat-button type="submit" [disabled]="!ibanForm.value.iban && !ibanForm.value.selectedOption">Confirmar</button>
+    </mat-dialog-actions>
+</form>

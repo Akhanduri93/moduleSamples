@@ -1,0 +1,16 @@
+.star-button {
+  height: 20px;
+  width: 22px;
+  line-height: 20px;
+  .icon-height {
+    height: 22px;
+    line-height: 22px;
+    font-size: 22px;
+  }
+}
+
+.star-button:enabled {
+  .icon-height {
+    color: #fbc02d;
+  }
+}

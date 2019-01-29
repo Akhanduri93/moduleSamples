@@ -1,0 +1,18 @@
+mat-list {
+  padding: 0 !important;
+}
+
+mat-icon {
+  font-size: 0.5rem !important;
+  padding: 0 !important;
+  margin-top: 0.3rem !important;
+  width: 1.2rem !important;
+}
+
+mat-list-item {
+  height: auto !important;
+}
+
+:host /deep/ .mat-list-item-content {
+  padding: 0 !important;
+}

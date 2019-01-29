@@ -1,0 +1,61 @@
+<div fxLayout="column">
+  <div
+      fxFlexOffset="2.875rem"
+      fxLayout="row"
+      fxLayout.md="column"
+      fxLayout.sm="column"
+      fxLayout.xs="column"
+      fxLayoutGap="24px"
+      fxLayoutGap.xs="1rem"
+      fxLayoutGap.sm="1rem">
+    <div
+        fxFlex="7 7 calc(7*100%/12 - 24px)"
+        fxFlex.md="12 12 calc(12*100%/12 - 24px)"
+        fxFlex.sm="100%"
+        fxFlex.xs="100%">
+      <app-financial-status
+          [loadingValue]="33"
+          fxLayoutAlign="column"
+          fxFlex></app-financial-status>
+    </div>
+    <div
+        *ngIf="showPaymentInfo()"
+        fxFlex="5 5 calc(5*100%/12 - 24px)"
+        fxFlex.md="12 12 calc(12*100%/12 - 24px)"
+        fxFlex.sm="100%"
+        fxFlex.xs="100%">
+      <app-payment-information
+          (existNextInvoices)="displayNextInvoices($event)"
+        [loadingValue]="33"></app-payment-information>
+    </div>
+  </div>
+
+  <h2 class="out-title">Contratos</h2>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxLayoutGap="24px">
+    <div
+        fxFlex.xs="4 4 calc(4*100%/4 - 16px)"
+        fxFlex.sm="8 8 calc(8*100%/12 - 16px)"
+        fxFlex.gt-sm="8 8 calc(8*100%/12 - 24px)">
+      <app-contracts-table
+          [loadingValue]="34"
+          fxLayout="column"
+          fxLayout.xs="column"
+          fxLayout.sm="column"
+          fxLayoutGap="0.5rem"></app-contracts-table>
+    </div>
+    <div
+        fxFlex.xs="4 4 calc(4*100%/4 - 16px)"
+        fxFlex.sm="8 8 calc(8*100%/8 - 16px)"
+        fxFlex.gt-sm="4 4 calc(4*100%/12 - 24px)"
+        fxLayout="column"
+        fxLayout.xs="row"
+        fxLayoutGap="24px"
+        >
+      <app-late-payments
+          *ngIf="hasPayments"
+          (hasPayments)="setPayments($event)"></app-late-payments>
+      <app-simulator></app-simulator>
+    </div>
+  </div>
+</div>

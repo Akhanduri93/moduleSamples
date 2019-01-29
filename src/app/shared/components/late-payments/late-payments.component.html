@@ -1,0 +1,137 @@
+<app-card
+    [title]="'Pagamento em Atraso'"
+    *ngIf="hasLatePayment"
+    fxFlex="12 12 calc(12*100%/12 - 16px)"
+    fxLayout="column"
+    class="payment-info">
+
+    <div
+        fxLayout="row"
+        fxLayout.xs="column"
+        fxLayoutGap="24px"
+        fxLayoutGap.xs="16px"
+        *ngFor="let invoice of invoices; let i = index">
+
+        <div
+            fxFlex="4 4 calc(4*100%/8 - 24px)"
+            fxFlex.sm="4 8 calc(4*100%/8 - 24px)"
+            fxLayout="column"
+            fxLayoutGap="1.25rem"
+            [ngClass]="i > 0 ? 'margin-divider-top' : ''"
+            *ngIf="i < invoicesCurrentLimit"
+        >
+            <div
+                fxLayout="column"
+                fxLayoutGap="4px">
+                <div fxLayout="row wrap">
+                    <mat-icon
+                        fxLayoutAlign="start center"
+                        class="payment-delayed"
+                        aria-label="Em atraso">error_outline</mat-icon>
+                    <span
+                        fxLayoutAlign="start center"
+                        class="mat-body-1"
+                        ngClass.md="mat-caption">{{ invoice.name }}</span>
+                </div>
+                <div
+                    class="delay-payment-amount"
+                    fxLayoutAlign="start">
+                    <h2>{{ invoice.amount | currencyFormat }}</h2>
+                </div>
+            </div>
+            <div
+                fxLayout="column"
+                class="date-container">
+                <div
+                    class="mat-caption mat-caption-no-margin"
+                    fxLayoutAlign="start">Data limite de pagamento</div>
+                <div
+                    fxLayoutAlign="start">
+                    <h4>{{ invoice.dueDate | date:'dd MMM yyyy' }}</h4>
+                </div>
+            </div>
+            <div
+                fxLayout="column"
+                *ngIf="!isMBReferenceActive(i)"
+                (click)="onToggleMBReference(i)"
+            >
+                <button
+                    mat-stroked-button
+                    color="primary">REFERÊNCIA MULTIBANCO</button>
+            </div>
+            <div
+                fxLayout="column"
+                *ngIf="isMBReferenceActive(i)">
+                <mat-card
+                    class="payment-details mat-elevation-z0"
+                    fxLayout="row wrap"
+                    fxLayoutGap="1rem"
+                    fxLayoutAlign="start center">
+                    <div
+                        fxLayout="row"
+                        fxLayoutAlign="center center">
+                        <svg width="57px" height="57px">
+                            <use xlink:href="assets/images/multibanco.svg#mb-dashboard"></use>
+                        </svg>
+                        <div
+                            fxLayout="column"
+                            fxLayoutGap="3px">
+                            <div
+                                fxLayoutAlign="start">
+                                <span
+                                    class="mat-body-2">Entidade:&nbsp;</span>
+                                <span
+                                    class="mat-body-2 mb-entity">{{ invoice.entity }}</span>
+                            </div>
+                            <div
+                                fxLayoutAlign="start">
+                                <span
+                                    class="mat-body-2">Referência:&nbsp;</span>
+                                <span
+                                    class="mat-body-2 mb-reference">{{ invoice.reference | iban }}</span>
+                            </div>
+                            <div
+                                fxLayoutAlign="start">
+                                <span
+                                    class="mat-body-2">Montante:&nbsp;</span>
+                                <span
+                                    class="mat-body-2 mb-amount">{{ invoice.amount | currencyFormat }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
+            <div
+                fxLayout="column">
+                <a
+                    class="mat-caption"
+                    routerLink="/portal/support/cases/report-case">Problemas com o pagamento?</a>
+            </div>
+            <mat-divider
+                style="position: relative;"
+                *ngIf="i + 1 < invoices.length && i + 1 < invoicesCurrentLimit"></mat-divider>
+        </div>
+    </div>
+    <div
+        fxLayout="row"
+        fxLayoutGap="24px"
+        fxLayoutGap.xs="16px"
+        fxLayoutAlign="center"
+        class="margin-divider-top"
+        *ngIf="invoices.length > invoicesDefaultLimit"
+    >
+        <button
+            class="more-button"
+            mat-icon-button
+            (click)="onToggleMorePayments()">
+            <mat-icon
+                aria-label="Mais"
+                color="primary"
+                *ngIf="invoicesCurrentLimit < invoices.length">expand_more</mat-icon>
+            <mat-icon
+                aria-label="Mais"
+                color="primary"
+                *ngIf="invoices.length === invoicesCurrentLimit">expand_less</mat-icon>
+        </button>
+    </div>
+</app-card>

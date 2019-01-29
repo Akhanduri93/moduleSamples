@@ -1,0 +1,14 @@
+<h3 mat-dialog-header>Condições gerais de seguro de equipamentos e dados eletrónicos/software em renting</h3>
+<mat-divider></mat-divider>
+<mat-dialog-content>
+    <div fxLayout="column" fxLayoutGap.xs="1rem">
+        <div class="insurance-container" fxLayout="column" fxLayoutGap="1.5rem" *ngFor="let insuranceData of insuranceData">
+            <h3>{{insuranceData?.heading}}</h3>
+            <p *ngFor="let text of insuranceData.text" class="mat-body-2" [ngClass]="!(isHandset | async)!.matches ? '' : 'mobile'">{{text}}<br>
+            </p>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions fxLayout fxLayoutGap="4px" fxLayoutAlign="end" fxLayoutAlign.xs="center">
+    <button mat-button type="button" color="primary" (click)="closeModal()" href="javascript:void(0);">Cancelar</button>
+</mat-dialog-actions>

@@ -1,0 +1,57 @@
+<mat-card
+    class="mat-elevation-z0"
+    fxLayout="column"
+          [ngClass]="setHeightClassForDashboardCards() || shouldHavePadding()">
+    <div fxLayout="row">
+        <div fxFlex
+             fxLayoutAlign="start"
+             fxLayout="column">
+            <div
+                fxLayout="row wrap"
+                fxLayoutGap="5px">
+                <mat-icon
+                    class="title-icon"
+                    [ngClass]="(objTitle.iconType === 'error') ? 'error-icon' : ''"
+                    *ngIf="objTitle.titleIcon"
+                    aria-label="objTitle.title"
+                    fxHide="{{showInfo}}"
+                    fxHide.gt-xs>{{objTitle.titleIcon}}</mat-icon>
+                <h3 fxHide.xs>{{objTitle.title}}</h3>
+                <h3 fxHide="{{showInfo}}" fxHide.gt-xs>{{objTitle.collapseTitle}}</h3>
+                <h3 fxShow="{{showInfo}}" fxHide.gt-xs>{{objTitle.expandTitle}}</h3>
+                <mat-icon *ngIf="objTitle.infoTip" aria-label="Info" class="info" fxLayoutAlign="start start" matTooltip="{{info}}"
+                          [matTooltipPosition]="'after'">info</mat-icon>
+            </div>
+            <div
+                *ngIf="objTitle.collapseSubTitle"
+                fxHide="{{showInfo}}"
+                fxHide.gt-xs>
+                <span>
+                    <h2
+                        *ngIf="objTitle.collapseSubTitleTypeAmount">{{objTitle.collapseSubTitle | currencyFormat }}</h2>
+                    <h2
+                        *ngIf="objTitle.collapseSubTitleTypePlain">{{ objTitle.collapseSubTitle }}</h2>
+                </span>
+            </div>
+        </div>
+        <div *ngIf="shouldExpandCollapse" fxLayoutAlign="start center">
+            <mat-icon
+                class="arrow-icons"
+                fxShow="{{showInfo}}"
+                fxHide.gt-xs color="primary"
+                (click)="showInfo=false;">keyboard_arrow_up</mat-icon>
+            <mat-icon
+                class="arrow-icons"
+                fxHide="{{showInfo}}"
+                fxHide.gt-xs color="primary"
+                (click)="showInfo=true;">keyboard_arrow_down</mat-icon>
+        </div>
+    </div>
+
+    <div fxFlexOffset="1rem" fxShow.lt-sm="{{showInfo}}">
+        <mat-divider></mat-divider>
+    </div>
+    <div fxFlexOffset="2rem" fxShow.lt-sm="{{showInfo}}">
+        <ng-content></ng-content>
+    </div>
+</mat-card>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="58px" viewBox="0 0 45 58" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>icones_finais-31</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="help-center" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Help-center-login" transform="translate(-937.000000, -1256.000000)" fill="#00ACC1" fill-rule="nonzero">
+            <g id="Group-4" transform="translate(0.000000, 673.000000)">
+                <g id="icones_finais-31" transform="translate(937.000000, 582.000000)">
+                    <path d="M22.5,0.975 L0,10.425 L2.925,36.675 C2.88255077,37.174099 2.88255077,37.675901 2.925,38.175 C4.8375,47.625 21.225,58.05 21.975,58.5375 L22.425,58.8375 L22.875,58.5375 C23.6625,58.05 42.075,46.3125 42.1125,36.45 L45,10.425 L22.5,0.975 Z M40.4625,35.85 L40.275,37.875 C38.775,45.7125 25.275,54.975 22.5,56.625 C19.8,54.825 6.15,45.375 4.725,37.6125 L4.725,35.8875 L1.9875,11.4 L22.5,2.925 L43.2,11.55 L40.4625,35.85 Z" id="Shape"></path>
+                    <rect id="Rectangle-path" x="21.6" y="15.1875" width="1.8" height="20.5875"></rect>
+                    <rect id="Rectangle-path" x="21.6" y="39.1875" width="1.8" height="2.55"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

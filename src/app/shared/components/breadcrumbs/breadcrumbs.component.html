@@ -1,0 +1,11 @@
+<div fxLayout [ngClass]="!(isHandset | async)!.matches ? 'top-space' : ''">
+    <a [routerLink]="['/portal/dashboard/contracts']">
+        <mat-icon>arrow_back</mat-icon>
+    </a>
+    <div class="breadcrumb-list" *ngFor="let b of breadcrumbs">
+        <a class="mat-caption" [routerLink]="b.link" *ngIf="b.link">
+      {{b.description}}
+    </a>
+        <span class="mat-caption" *ngIf="!b.link">{{b.description}}</span>
+    </div>
+</div>

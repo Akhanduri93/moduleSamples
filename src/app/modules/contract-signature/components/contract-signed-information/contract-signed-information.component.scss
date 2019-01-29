@@ -1,0 +1,23 @@
+.signed-block {
+    margin-top: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 1.5rem 2.5rem 1rem;
+    .top-border {
+        border-top: 1px dashed black;
+        padding-top: 1rem;
+    }
+}
+
+.logo {
+    height: 92px;
+    top: 3px;
+    position: relative;
+}
+
+.signed-id {
+    padding-right: 2.5rem;
+}
+
+.no-space {
+    display: block;
+}
